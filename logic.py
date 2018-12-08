@@ -3,7 +3,7 @@ import sys
 from PyQt4 import QtGui
 import calculator
 import math
-
+prev= ""
 class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 
 	def __init__(self):
@@ -65,32 +65,89 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.b_close.clicked.connect(lambda:self.storage(' ) ',1))
 		self.clear.clicked.connect(self.display.clear)
 		self.clear.clicked.connect(lambda:self.storage("",3))
+		self.back.clicked.connect(self.display.clear)
+		self.back.clicked.connect(lambda:self.display_screen2(self.prev_disp))
+		self.back.clicked.connect(lambda:self.storage1(self.store))
 		self.equal.clicked.connect(self.calculation)
 		self.display.setReadOnly(True)	
 	
 	store= ""
-	
+	prev_disp = ""
+	stack = []
+	stack_disp = []	
+	temp = []
+	def storage1(self,value):
+		try:
+			self.stack.pop()
+		except IndexError:
+			self.store = ""
+		else:
+			self.temp = self.stack
+			self.store = ''.join(self.temp)
+
 	def storage(self,value,k):
 		if k is 1 :
-			self.store=self.store+value
+			self.store=self.store + value
 		elif k is 3:
 			self.store=""
 		print (self.store)
-	
+		self.stack.append(value)
+
 	def display_screen(self,value):
-		self.display.insert(value)	
-	
+		self.display.insert(value)
+		self.stack_disp.append(value)
+		
 	def display_screen1(self,value):
 		self.display.setText(value)
-	#displays values on screen
+		self.stack_disp.append(value)
+
+	def display_screen2(self,value):
+		try:
+			self.stack_disp.pop()
+		except IndexError:
+			self.display_screen1("")
+		else:
+			self.temp = self.stack_disp
+			value = ''.join(self.temp)		
+			self.display.setText(value)
+
+	def display_error(self,value):
+		self.display.setText(value)
+		self.stack_disp.append(value)
+
+	def disp_res(self,value):
+		self.display.setText(value)
+		self.stack_disp.append(value)
+
 	def calculation(self):
 		screen_value=self.store
 		screen_value=str(screen_value)
-		final_value=eval(screen_value)
-		final_value=str(final_value)
-		self.store=final_value
-		print(self.store)
-		self.display_screen1(final_value)
+		print(''.join(self.stack))
+		try:		
+			final_value=eval(screen_value)
+		except ZeroDivisionError:
+			print("Math Error : Division by Zero")
+			self.stack.append('#') #Done so as to pop once in order to remove the error message from disp and secondly to pop the wrong input
+			self.display_error("Math Error : Division by Zero")
+		except ValueError:
+			print("Math Error : No negatives in sqrt/log")
+			self.stack.append('#')
+			self.display_error("Math Error : No negatives in sqrt/log")
+		except SyntaxError:
+			print("Syntax Error")
+			self.stack.append('#')
+			self.display_error("Syntax Error")
+		except AttributeError:
+			print("Input Error : Please enter proper input")
+			self.stack.append('#')
+			self.display_error("Input Error : Please enter proper input")
+		else:		
+			final_value=str(final_value)
+			self.store=final_value
+			self.stack.append(final_value)
+			print(self.store)	
+			self.disp_res(" = " + final_value)
+	
 	
 
 if __name__== '__main__':
