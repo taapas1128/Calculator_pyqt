@@ -122,6 +122,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 	def calculation(self):
 		screen_value=self.store
 		screen_value=str(screen_value)
+    
 		print(''.join(self.stack))
 		try:		
 			final_value=eval(screen_value)
@@ -149,7 +150,6 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 			self.disp_res(" = " + final_value)
 	
 	
-
 if __name__== '__main__':
 	qapp=QtGui.QApplication(sys.argv)
 	calc=calculator_class()
