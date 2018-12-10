@@ -1350,9 +1350,15 @@ class Ui_Dialog(object):
         self.equal = QtGui.QPushButton(Dialog)
         self.equal.setGeometry(QtCore.QRect(220, 290, 61, 51))
         self.equal.setObjectName(_fromUtf8("equal"))
+
         self.clear = QtGui.QPushButton(Dialog)
-        self.clear.setGeometry(QtCore.QRect(220, 110, 131, 51))
+        self.clear.setGeometry(QtCore.QRect(220, 110, 61, 51))
         self.clear.setObjectName(_fromUtf8("clear"))
+
+	self.back = QtGui.QPushButton(Dialog)
+        self.back.setGeometry(QtCore.QRect(290, 110, 61, 51))
+        self.back.setObjectName(_fromUtf8("back"))
+
         self.add = QtGui.QPushButton(Dialog)
         self.add.setGeometry(QtCore.QRect(220, 170, 61, 51))
         self.add.setObjectName(_fromUtf8("add"))
@@ -1424,6 +1430,7 @@ class Ui_Dialog(object):
         self.decimal.setText(_translate("Dialog", ".", None))
         self.equal.setText(_translate("Dialog", "=", None))
         self.clear.setText(_translate("Dialog", "AC", None))
+	self.back.setText(_translate("Dialog", "Back", None))
         self.add.setText(_translate("Dialog", "+", None))
         self.substract.setText(_translate("Dialog", "-", None))
         self.divide.setText(_translate("Dialog", "/", None))
