@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>367</width>
+    <width>434</width>
     <height>478</height>
    </rect>
   </property>
@@ -1458,7 +1458,7 @@ QDateEdit::down-arrow:focus
     <rect>
      <x>10</x>
      <y>20</y>
-     <width>341</width>
+     <width>411</width>
      <height>71</height>
     </rect>
    </property>
@@ -1682,6 +1682,32 @@ QDateEdit::down-arrow:focus
    </property>
    <property name="text">
     <string>π</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bco">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>110</y>
+     <width>61</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>j</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="arg">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>290</y>
+     <width>61</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Arg</string>
    </property>
   </widget>
  </widget>

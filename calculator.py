@@ -25,7 +25,7 @@ except AttributeError:
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
-        Dialog.resize(367, 478)
+        Dialog.resize(434, 478)
         Dialog.setStyleSheet(_fromUtf8("\n"
 "QToolTip\n"
 "{\n"
@@ -1345,7 +1345,7 @@ class Ui_Dialog(object):
         self.decimal.setGeometry(QtCore.QRect(150, 290, 61, 51))
         self.decimal.setObjectName(_fromUtf8("decimal"))
         self.display = QtGui.QLineEdit(Dialog)
-        self.display.setGeometry(QtCore.QRect(10, 20, 341, 71))
+        self.display.setGeometry(QtCore.QRect(10, 20, 411, 71))
         self.display.setObjectName(_fromUtf8("display"))
         self.equal = QtGui.QPushButton(Dialog)
         self.equal.setGeometry(QtCore.QRect(220, 290, 61, 51))
@@ -1398,6 +1398,12 @@ class Ui_Dialog(object):
         self.pi = QtGui.QPushButton(Dialog)
         self.pi.setGeometry(QtCore.QRect(290, 410, 61, 51))
         self.pi.setObjectName(_fromUtf8("pi"))
+        self.bco = QtGui.QPushButton(Dialog)
+        self.bco.setGeometry(QtCore.QRect(360, 110, 61, 171))
+        self.bco.setObjectName(_fromUtf8("bco"))
+        self.arg = QtGui.QPushButton(Dialog)
+        self.arg.setGeometry(QtCore.QRect(360, 290, 61, 171))
+        self.arg.setObjectName(_fromUtf8("arg"))
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -1433,4 +1439,6 @@ class Ui_Dialog(object):
         self.ln.setText(_translate("Dialog", "ln", None))
         self.e.setText(_translate("Dialog", "e", None))
         self.pi.setText(_translate("Dialog", "π", None))
+        self.bco.setText(_translate("Dialog", "j", None))
+        self.arg.setText(_translate("Dialog", "Arg", None))
 

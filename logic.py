@@ -3,6 +3,7 @@ import sys
 from PyQt4 import QtGui
 import calculator
 import math
+import cmath
 
 class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 
@@ -29,8 +30,10 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.b8.clicked.connect(lambda:self.storage('8',1))
 		self.b9.clicked.connect(lambda:self.display_screen('9'))
 		self.b9.clicked.connect(lambda:self.storage('9',1))
+		self.bco.clicked.connect(lambda:self.display_screen('j'))
+		self.bco.clicked.connect(lambda:self.storage('j',1))
 		self.decimal.clicked.connect(lambda:self.display_screen('.'))
-		self.decimal.clicked.connect(lambda:self.storage('.',1))		
+		self.decimal.clicked.connect(lambda:self.storage('.',1))
 		self.add.clicked.connect(lambda:self.display_screen(' + '))
 		self.add.clicked.connect(lambda:self.storage(' + ',1))
 		self.substract.clicked.connect(lambda:self.display_screen(' - '))
@@ -49,6 +52,8 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.pi.clicked.connect(lambda:self.storage('math.pi',1))
 		self.e.clicked.connect(lambda:self.display_screen('e'))
 		self.e.clicked.connect(lambda:self.storage('math.e',1))
+		self.arg.clicked.connect(lambda:self.display_screen('Arg'))
+		self.arg.clicked.connect(lambda:self.storage('cmath.phase',1))
 		self.b_open.clicked.connect(lambda:self.display_screen(' ( '))
 		self.b_open.clicked.connect(lambda:self.storage(' ( ',1))
 		self.sin.clicked.connect(lambda:self.display_screen(' sin( '))
@@ -66,20 +71,20 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.clear.clicked.connect(self.display.clear)
 		self.clear.clicked.connect(lambda:self.storage("",3))
 		self.equal.clicked.connect(self.calculation)
-		self.display.setReadOnly(True)	
-	
+		self.display.setReadOnly(True)
+
 	store= ""
-	
+
 	def storage(self,value,k):
 		if k is 1 :
 			self.store=self.store+value
 		elif k is 3:
 			self.store=""
 		print (self.store)
-	
+
 	def display_screen(self,value):
-		self.display.insert(value)	
-	
+		self.display.insert(value)
+
 	def display_screen1(self,value):
 		self.display.setText(value)
 	#displays values on screen
@@ -88,26 +93,26 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		screen_value=str(screen_value)
 		temp = "".join(reversed(screen_value))
 		a = screen_value.find("/ 0")
-		b = screen_value.find(" math.log10( -")		
+		b = screen_value.find(" math.log10( -")
 		c = screen_value.find(" math.sqrt(  -")
 		d = screen_value.find(" (math.log10(math.e))**(-1) * math.log10(  -")
 		if(a != -1):
-			final_value = "Math Error : Division by zero"	
+			final_value = "Math Error : Division by zero"
 		elif(c != -1):
 			final_value = "Math Error : Negative in square root not allowed"
 		elif(b != -1):
 			final_value = "Math Error : Negative in log not allowed"
-		elif(d != -1):	
+		elif(d != -1):
 			final_value = "Math Error : Negative in log not allowed"
 		else:
 			final_value=eval(screen_value)
 			final_value=str(final_value)
-		
+
 		self.store=final_value
 		print(self.store)
 		self.display_screen1(final_value)
-	
-	
+
+
 
 if __name__== '__main__':
 	qapp=QtGui.QApplication(sys.argv)
