@@ -3,6 +3,7 @@ import sys
 from PyQt4 import QtGui
 import calculator
 import math
+import cmath
 prev= ""
 class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 
@@ -29,8 +30,10 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.b8.clicked.connect(lambda:self.storage('8',1))
 		self.b9.clicked.connect(lambda:self.display_screen('9'))
 		self.b9.clicked.connect(lambda:self.storage('9',1))
+		self.bco.clicked.connect(lambda:self.display_screen('j'))
+		self.bco.clicked.connect(lambda:self.storage('j',1))
 		self.decimal.clicked.connect(lambda:self.display_screen('.'))
-		self.decimal.clicked.connect(lambda:self.storage('.',1))		
+		self.decimal.clicked.connect(lambda:self.storage('.',1))
 		self.add.clicked.connect(lambda:self.display_screen(' + '))
 		self.add.clicked.connect(lambda:self.storage(' + ',1))
 		self.substract.clicked.connect(lambda:self.display_screen(' - '))
@@ -49,6 +52,8 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.pi.clicked.connect(lambda:self.storage('math.pi',1))
 		self.e.clicked.connect(lambda:self.display_screen('e'))
 		self.e.clicked.connect(lambda:self.storage('math.e',1))
+		self.arg.clicked.connect(lambda:self.display_screen('Arg'))
+		self.arg.clicked.connect(lambda:self.storage('cmath.phase',1))
 		self.b_open.clicked.connect(lambda:self.display_screen(' ( '))
 		self.b_open.clicked.connect(lambda:self.storage(' ( ',1))
 		self.sin.clicked.connect(lambda:self.display_screen(' sin( '))
@@ -69,12 +74,12 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.back.clicked.connect(lambda:self.display_screen2(self.prev_disp))
 		self.back.clicked.connect(lambda:self.storage1(self.store))
 		self.equal.clicked.connect(self.calculation)
-		self.display.setReadOnly(True)	
-	
+		self.display.setReadOnly(True)
+
 	store= ""
 	prev_disp = ""
 	stack = []
-	stack_disp = []	
+	stack_disp = []
 	temp = []
 	def storage1(self,value):
 		try:
@@ -96,7 +101,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 	def display_screen(self,value):
 		self.display.insert(value)
 		self.stack_disp.append(value)
-		
+
 	def display_screen1(self,value):
 		self.display.setText(value)
 		self.stack_disp.append(value)
@@ -108,7 +113,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 			self.display_screen1("")
 		else:
 			self.temp = self.stack_disp
-			value = ''.join(self.temp)		
+			value = ''.join(self.temp)
 			self.display.setText(value)
 
 	def display_error(self,value):
@@ -123,7 +128,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		screen_value=self.store
 		screen_value=str(screen_value)
 		print(''.join(self.stack))
-		try:		
+		try:
 			final_value=eval(screen_value)
 		except ZeroDivisionError:
 			print("Math Error : Division by Zero")
@@ -141,14 +146,14 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 			print("Input Error : Please enter proper input")
 			self.stack.append('#')
 			self.display_error("Input Error : Please enter proper input")
-		else:		
+		else:
 			final_value=str(final_value)
 			self.store=final_value
 			self.stack.append(final_value)
-			print(self.store)	
+			print(self.store)
 			self.disp_res(" = " + final_value)
-	
-	
+
+
 
 if __name__== '__main__':
 	qapp=QtGui.QApplication(sys.argv)
