@@ -9,13 +9,23 @@ This is a basic PyQt based scientific calculator.
 
 ## Prerequisite:
 
+### Linux based OS or Windows
+
 * SIP
 
 * PyQt4
 
 * Qt Designer (Only for developers for editing layouts)
 
-NOTE: For MacOS users must have already installed Homebrew (to install dependencies easily).
+### MacOS
+
+* Homebrew (to install dependencies easily).
+
+* SIP
+
+* PyQt4
+
+* Qt Designer (Only for developers for editing layouts)
 
 ## Instructions to Run:
 
