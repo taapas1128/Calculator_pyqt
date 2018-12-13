@@ -86,7 +86,6 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 	def calculation(self):
 		screen_value=self.store
 		screen_value=str(screen_value)
-		temp = "".join(reversed(screen_value))
 		a = screen_value.find("/ 0")
 		b = screen_value.find(" math.log10( -")		
 		c = screen_value.find(" math.sqrt(  -")
