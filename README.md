@@ -7,19 +7,9 @@
 # PyQt Calculator
 This is a basic PyQt based scientific calculator.
 
-## Prerequisite:
+## Linux based OS
 
-### Linux based OS or Windows
-
-* SIP
-
-* PyQt4
-
-* Qt Designer (Only for developers for editing layouts)
-
-### MacOS
-
-* Homebrew (to install dependencies easily).
+### Prerequisite:
 
 * SIP
 
@@ -27,24 +17,68 @@ This is a basic PyQt based scientific calculator.
 
 * Qt Designer (Only for developers for editing layouts)
 
-## Instructions to Run:
+### Installation:
 
-* Before you can build PyQt4 you must have already built and installed [SIP](https://pypi.org/project/SIP/) .
+* Download & install [SIP](https://www.riverbankcomputing.com/software/sip/download/).
 
-* You need to install PyQt4 dependency which can be installed on Linux based OS as `sudo apt-get install python-qt4.`
-  For MacOS Run `brew install cartr/qt4/pyqt` on homebrew & finally add it to the python path.
-  For Windows download wheel file from [here](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqt4) & Then 
-  locate the download file directory & Run `pip install .\pyqt4-file-name.whl` in command prompt or powershell.
+* PyQt4 can be installed via terminal as `sudo apt-get install python-qt4`
 
-NOTE: 'pyqt-file-name' should be replaced by the name of wheel file you've downloaded!
+* Run `logic.py` for running the calculator.
 
-* Run `logic.py` for running the calculator. This contains the basic evaluation code and the logic behind the calculator.
+* For UI modification install Qt designer which can be installed as given [here](https://askubuntu.com/questions/763877/how-to-install-and-run-qt-designer-for-python).
 
-* `calculator.ui` is the UI design used which can be created by PyQt Designer GUI. For UI modification you can install PyQt designer which can be installed for linux based OS as given [here](https://askubuntu.com/questions/763877/how-to-install-and-run-qt-designer-for-python). For windows or MacOS download it from [here](https://www.qt.io/download) .
+## Windows
+
+### Prerequisite:
+
+* SIP
+
+* PyQt4
+
+* Qt Designer (Only for developers for editing layouts)
+
+### Installation:
+
+* Download & install SIP via cmd or powershell as `pip install SIP`.
+
+* For PyQt4 download its wheel file from [here](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqt4). Then locate its directory and run
+  `pip install .\pyqt4-file-name.whl` in cmd or powershell.
+   Note: "pyqt4-file-name" should be the name of wheel file downloaded.
+
+* Run `logic.py` for running the calculator.
+   
+* For UI modification download & install Qt designer from [here](https://www.qt.io/download).
+
+## MacOS 
+
+### Prerequisite:
+
+* Homebrew (For easy installation of dependency)
+
+* SIP
+
+* PyQt4
+
+* Qt Designer (Only for developers for editing layouts)
+
+### Installation:
+
+* Download & install [SIP](https://www.riverbankcomputing.com/software/sip/download/).
+  Or you can install it via homebrew as `brew install sip`.
+  
+* For PyQt4 Run `brew install cartr/qt4/pyqt` in homebrew & finally add it to the python path.
+
+* Run `logic.py` for running the calculator.
+
+* For UI modification download & install Qt designer from [here](https://www.qt.io/download).
+
+## Important Information
+
+*  `logic.py` contains the basic evaluation code and the logic behind the calculator.
+
+* `calculator.ui` is the UI design used which can be created by PyQt Designer GUI.
 
 * `calculator.py` is extract code of the UI using PyQt.
-
-* Any `input.ui` file can be converted to `output.py` by `pyuic4 input.ui -o output.py` for pyqt4 dependencies.
 
 * You can also go through these set of videos for understanding the framework and functioning of qt designer. Click [here](https://www.youtube.com/watch?v=iDJlGV8Rvgg).
 
