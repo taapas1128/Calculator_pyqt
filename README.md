@@ -11,15 +11,11 @@ This is a basic PyQt based scientific calculator.
 
 ### Prerequisite:
 
-* SIP
-
 * PyQt4
 
 * Qt Designer (Only for developers for editing layouts)
 
 ### Installation:
-
-* Download & install [SIP](https://www.riverbankcomputing.com/software/sip/download/).
 
 * PyQt4 can be installed via terminal as `sudo apt-get install python-qt4`
 
@@ -68,7 +64,7 @@ This is a basic PyQt based scientific calculator.
 
 ## Running Calculator:
 
-* `clone` the repository.
+* Run `git clone https://github.com/taapas1128/Calculator_pyqt` to clone the repository.
 
 * Run `logic.py` for running the calculator.
 
