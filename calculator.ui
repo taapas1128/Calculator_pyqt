@@ -192,12 +192,13 @@
     <string>=</string>
    </property>
   </widget>
+
   <widget class="QPushButton" name="clear">
    <property name="geometry">
     <rect>
      <x>220</x>
      <y>110</y>
-     <width>131</width>
+     <width>61</width>
      <height>51</height>
     </rect>
    </property>
@@ -205,6 +206,21 @@
     <string>AC</string>
    </property>
   </widget>
+
+  <widget class="QPushButton" name="back">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>110</y>
+     <width>61</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>		
+
   <widget class="QPushButton" name="add">
    <property name="geometry">
     <rect>
@@ -254,7 +270,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>X</string>
+    <string>*</string>
    </property>
   </widget>
   <widget class="QPushButton" name="sq_root">
@@ -374,6 +390,7 @@
     <string>ln</string>
    </property>
   </widget>
+
   <widget class="QPushButton" name="e">
    <property name="geometry">
     <rect>
@@ -387,6 +404,7 @@
     <string>e</string>
    </property>
   </widget>
+
   <widget class="QPushButton" name="pi">
    <property name="geometry">
     <rect>
@@ -400,6 +418,77 @@
     <string>π</string>
    </property>
   </widget>
+
+  <widget class="QPushButton" name="graph">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>470</y>
+     <width>61</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>graph</string>
+   </property>
+  </widget>
+
+  <widget class="QPushButton" name="range">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>470</y>
+     <width>61</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>range</string>
+   </property>
+  </widget>
+
+  <widget class="QPushButton" name="plot">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>470</y>
+     <width>61</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>plot</string>
+   </property>
+  </widget>
+	
+  <widget class="QPushButton" name="x">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>470</y>
+     <width>61</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>x</string>
+   </property>
+  </widget>
+	
+  <widget class="QPushButton" name="comma">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>470</y>
+     <width>61</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>,</string>
+   </property>
+  </widget>				
+
  </widget>
  <resources/>
  <connections/>
