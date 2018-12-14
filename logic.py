@@ -5,8 +5,10 @@ import sys
 from PyQt4 import QtGui
 import calculator
 import math
+
 import numpy as np
 import pyqtgraph as pg
+
 
 class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 
@@ -88,6 +90,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 	prev_disp = ""
 	stack = []
 	stack_disp = []	
+
 	temp = []	
 	res = ""
 	#Displays the equation on the console
@@ -130,6 +133,9 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.store = ""
 	
 	#Aux. storage for implementing 'back'		
+
+	temp = []
+
 	def storage1(self,value):
 		try:
 			self.stack.pop()
@@ -138,15 +144,19 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		else:
 			self.temp = self.stack
 			self.store = ''.join(self.temp)
+
 			self.equation = self.store
 	
 	#Primary storage of input fed
+
+
 	def storage(self,value,k):
 		if k is 1 :
 			self.store=self.store + value
 		elif k is 3:
 			self.store=""
 		print (self.store)
+
 		self.equation = self.store
 		self.stack.append(value)
 	
@@ -161,6 +171,18 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.stack_disp.append(value)
 	
 	#Aux display after pressing back
+
+		self.stack.append(value)
+
+	def display_screen(self,value):
+		self.display.insert(value)
+		self.stack_disp.append(value)
+		
+	def display_screen1(self,value):
+		self.display.setText(value)
+		self.stack_disp.append(value)
+
+
 	def display_screen2(self,value):
 		try:
 			self.stack_disp.pop()
@@ -170,6 +192,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 			self.temp = self.stack_disp
 			value = ''.join(self.temp)		
 			self.display.setText(value)
+
 			
 	#Disp' fun' for error messages
 	def display_error(self,value):
@@ -182,6 +205,17 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.stack_disp.append(value)
 	
 	#Heart of the basic calculator
+
+
+	def display_error(self,value):
+		self.display.setText(value)
+		self.stack_disp.append(value)
+
+	def disp_res(self,value):
+		self.display.setText(value)
+		self.stack_disp.append(value)
+
+
 	def calculation(self):
 		screen_value=self.store
 		screen_value=str(screen_value)
