@@ -68,7 +68,7 @@ This is a basic PyQt based scientific calculator.
 
 ## Running Calculator:
 
-*`clone` the repository.
+* `clone` the repository.
 
 * Run `logic.py` for running the calculator.
 
