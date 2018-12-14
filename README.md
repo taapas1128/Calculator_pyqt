@@ -23,8 +23,6 @@ This is a basic PyQt based scientific calculator.
 
 * PyQt4 can be installed via terminal as `sudo apt-get install python-qt4`
 
-* Run `logic.py` for running the calculator.
-
 * For UI modification install Qt designer which can be installed as given [here](https://askubuntu.com/questions/763877/how-to-install-and-run-qt-designer-for-python).
 
 ## Windows
@@ -44,8 +42,6 @@ This is a basic PyQt based scientific calculator.
 * For PyQt4 download its wheel file from [here](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqt4). Then locate its directory and run
   `pip install .\pyqt4-file-name.whl` in cmd or powershell.
    Note: "pyqt4-file-name" should be the name of wheel file downloaded.
-
-* Run `logic.py` for running the calculator.
    
 * For UI modification download & install Qt designer from [here](https://www.qt.io/download).
 
@@ -68,11 +64,15 @@ This is a basic PyQt based scientific calculator.
   
 * For PyQt4 Run `brew install cartr/qt4/pyqt` in homebrew & finally add it to the python path.
 
-* Run `logic.py` for running the calculator.
-
 * For UI modification download & install Qt designer from [here](https://www.qt.io/download).
 
-## Important Information
+## Running Calculator:
+
+* `clone` the repository.
+
+* Run `logic.py` for running the calculator.
+
+## Additional Information
 
 *  `logic.py` contains the basic evaluation code and the logic behind the calculator.
 
