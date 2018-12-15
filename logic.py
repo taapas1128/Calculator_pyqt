@@ -55,6 +55,8 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.sin.clicked.connect(lambda:self.storage('math.sin( ',1))
 		self.cos.clicked.connect(lambda:self.display_screen(' cos( '))
 		self.cos.clicked.connect(lambda:self.storage(' math.cos( ',1))
+		self.fact.clicked.connect(lambda:self.display_screen('factorial('))
+		self.fact.clicked.connect(lambda:self.storage('math.factorial(',1))
 		self.tan.clicked.connect(lambda:self.display_screen(' tan( '))
 		self.tan.clicked.connect(lambda:self.storage(' math.tan( ',1))
 		self.sq_root.clicked.connect(lambda:self.display_screen(' sqrt( '))

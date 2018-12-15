@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'calculator.ui'
+#
+# Created by: PyQt4 UI code generator 4.11.4
+#
+# WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
 
@@ -18,7 +25,7 @@ except AttributeError:
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
-        Dialog.resize(367, 478)
+        Dialog.resize(357, 526)
         self.b1 = QtGui.QPushButton(Dialog)
         self.b1.setGeometry(QtCore.QRect(10, 230, 61, 51))
         self.b1.setObjectName(_fromUtf8("b1"))
@@ -61,15 +68,12 @@ class Ui_Dialog(object):
         self.equal = QtGui.QPushButton(Dialog)
         self.equal.setGeometry(QtCore.QRect(220, 290, 61, 51))
         self.equal.setObjectName(_fromUtf8("equal"))
-
         self.clear = QtGui.QPushButton(Dialog)
         self.clear.setGeometry(QtCore.QRect(220, 110, 61, 51))
         self.clear.setObjectName(_fromUtf8("clear"))
-
-	self.back = QtGui.QPushButton(Dialog)
+        self.back = QtGui.QPushButton(Dialog)
         self.back.setGeometry(QtCore.QRect(290, 110, 61, 51))
         self.back.setObjectName(_fromUtf8("back"))
-
         self.add = QtGui.QPushButton(Dialog)
         self.add.setGeometry(QtCore.QRect(220, 170, 61, 51))
         self.add.setObjectName(_fromUtf8("add"))
@@ -115,6 +119,9 @@ class Ui_Dialog(object):
         self.pi = QtGui.QPushButton(Dialog)
         self.pi.setGeometry(QtCore.QRect(290, 410, 61, 51))
         self.pi.setObjectName(_fromUtf8("pi"))
+        self.fact = QtGui.QPushButton(Dialog)
+        self.fact.setGeometry(QtCore.QRect(10, 470, 61, 51))
+        self.fact.setObjectName(_fromUtf8("fact"))
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -135,7 +142,7 @@ class Ui_Dialog(object):
         self.decimal.setText(_translate("Dialog", ".", None))
         self.equal.setText(_translate("Dialog", "=", None))
         self.clear.setText(_translate("Dialog", "AC", None))
-	self.back.setText(_translate("Dialog", "Back", None))
+        self.back.setText(_translate("Dialog", "Back", None))
         self.add.setText(_translate("Dialog", "+", None))
         self.substract.setText(_translate("Dialog", "-", None))
         self.divide.setText(_translate("Dialog", "/", None))
@@ -150,4 +157,16 @@ class Ui_Dialog(object):
         self.b_close.setText(_translate("Dialog", ")", None))
         self.ln.setText(_translate("Dialog", "ln", None))
         self.e.setText(_translate("Dialog", "e", None))
-        self.pi.setText(_translate("Dialog", "pi", None))
+        self.pi.setText(_translate("Dialog", "π", None))
+        self.fact.setText(_translate("Dialog", "fact", None))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    Dialog = QtGui.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())
+
