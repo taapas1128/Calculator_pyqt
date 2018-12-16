@@ -15,11 +15,14 @@ This is a basic PyQt based scientific calculator.
 
 * Qt Designer (Only for developers for editing layouts)
 
+* matplotlib module and numpy
+
 ### Installation:
 
 * PyQt4 can be installed via terminal as `sudo apt-get install python-qt4`
 
 * For UI modification install Qt designer which can be installed as given [here](https://askubuntu.com/questions/763877/how-to-install-and-run-qt-designer-for-python).
+
 
 ## Windows
 
@@ -31,6 +34,9 @@ This is a basic PyQt based scientific calculator.
 
 * Qt Designer (Only for developers for editing layouts)
 
+* Matplotlib and numpy
+
+
 ### Installation:
 
 * Download & install SIP via cmd or powershell as `pip install SIP`.
@@ -41,6 +47,11 @@ This is a basic PyQt based scientific calculator.
    
 * For UI modification download & install Qt designer from [here](https://www.qt.io/download).
 
+* Update pip by typing the command 'python.exe -m pip install --upgrade pip'
+
+* Download & install pip via cmd or powershell as `pip install matplotlib' , its dependencies such as numpy will be automatically installed
+
+ 
 ## MacOS 
 
 ### Prerequisite:

@@ -1,0 +1,1 @@
+pyuic4 -x calculator.ui -o calculator.py
