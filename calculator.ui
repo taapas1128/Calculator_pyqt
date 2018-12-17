@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>426</width>
+    <width>449</width>
     <height>478</height>
    </rect>
   </property>
@@ -129,65 +129,7 @@ QGroupBox::indicator:unchecked:disabled
     image: url(:/qss_icons/rc/checkbox_unchecked_disabled.png);
 }
 
-QRadioButton
-{
-    spacing: 5px;
-    outline: none;
-    color: #eff0f1;
-    margin-bottom: 2px;
-}
 
-QRadioButton:disabled
-{
-    color: #76797C;
-}
-QRadioButton::indicator
-{
-    width: 21px;
-    height: 21px;
-}
-
-QRadioButton::indicator:unchecked
-{
-    image: url(:/qss_icons/rc/radio_unchecked.png);
-}
-
-
-QRadioButton::indicator:unchecked:hover,
-QRadioButton::indicator:unchecked:focus,
-QRadioButton::indicator:unchecked:pressed
-{
-    border: none;
-    outline: none;
-    image: url(:/qss_icons/rc/radio_unchecked_focus.png);
-}
-
-QRadioButton::indicator:checked
-{
-    border: none;
-    outline: none;
-    image: url(:/qss_icons/rc/radio_checked.png);
-}
-
-QRadioButton::indicator:checked:hover,
-QRadioButton::indicator:checked:focus,
-QRadioButton::indicator:checked:pressed
-{
-    border: none;
-    outline: none;
-    image: url(:/qss_icons/rc/radio_checked_focus.png);
-}
-
-QRadioButton::indicator:checked:disabled
-{
-    outline: none;
-    image: url(:/qss_icons/rc/radio_checked_disabled.png);
-}
-
-QRadioButton::indicator:unchecked:disabled
-{
-    image: url(:/qss_icons/rc/radio_unchecked_disabled.png);
-}
 
 
 QMenuBar
@@ -1701,9 +1643,9 @@ QDateEdit::down-arrow:focus
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>110</y>
-     <width>61</width>
-     <height>171</height>
+     <y>230</y>
+     <width>81</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="text">
@@ -1714,15 +1656,62 @@ QDateEdit::down-arrow:focus
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>290</y>
-     <width>61</width>
-     <height>171</height>
+     <y>350</y>
+     <width>81</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="text">
     <string>Arg</string>
    </property>
   </widget>
+  <widget class="QRadioButton" name="r1">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>110</y>
+     <width>81</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Complex Mode</string>
+   </property>
+  </widget>
+  <zorder>arg</zorder>
+  <zorder>b1</zorder>
+  <zorder>b3</zorder>
+  <zorder>b2</zorder>
+  <zorder>b6</zorder>
+  <zorder>b5</zorder>
+  <zorder>b4</zorder>
+  <zorder>b9</zorder>
+  <zorder>b8</zorder>
+  <zorder>b7</zorder>
+  <zorder>plus_minus</zorder>
+  <zorder>b0</zorder>
+  <zorder>decimal</zorder>
+  <zorder>display</zorder>
+  <zorder>equal</zorder>
+  <zorder>clear</zorder>
+  <zorder>back</zorder>
+  <zorder>add</zorder>
+  <zorder>substract</zorder>
+  <zorder>divide</zorder>
+  <zorder>multiply</zorder>
+  <zorder>sq_root</zorder>
+  <zorder>sin</zorder>
+  <zorder>cos</zorder>
+  <zorder>tan</zorder>
+  <zorder>power</zorder>
+  <zorder>log</zorder>
+  <zorder>b_open</zorder>
+  <zorder>b_close</zorder>
+  <zorder>ln</zorder>
+  <zorder>e</zorder>
+  <zorder>pi</zorder>
+  <zorder>r1</zorder>
+  <zorder>bco</zorder>
  </widget>
  <resources/>
  <connections/>

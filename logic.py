@@ -6,10 +6,35 @@ import math
 import cmath
 prev= ""
 class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
+	def btnstate(self,r1):
+		if r1.isChecked() == True:
+			self.bco.show()
+			self.arg.show()
+			self.sin.hide()
+			self.cos.hide()
+			self.tan.hide()
+			self.log.hide()
+			self.ln.hide()
+			self.sq_root.hide()
+			self.e.hide()
+		else:
+			self.bco.hide()
+			self.arg.hide()
+			self.sin.show()
+			self.cos.show()
+			self.tan.show()
+			self.log.show()
+			self.ln.show()
+			self.sq_root.show()
+			self.e.show()
 
 	def __init__(self):
 		super(calculator_class, self).__init__()
 		self.setupUi(self)
+		self.r1.setChecked(False)
+		self.bco.hide()
+		self.arg.hide()
+		self.r1.toggled.connect(lambda:self.btnstate(self.r1))
 		self.b0.clicked.connect(lambda:self.display_screen('0'))
 		self.b0.clicked.connect(lambda:self.storage('0',1))
 		self.b1.clicked.connect(lambda:self.display_screen('1'))
@@ -52,8 +77,8 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.pi.clicked.connect(lambda:self.storage('math.pi',1))
 		self.e.clicked.connect(lambda:self.display_screen('e'))
 		self.e.clicked.connect(lambda:self.storage('math.e',1))
-		self.arg.clicked.connect(lambda:self.display_screen('Arg'))
-		self.arg.clicked.connect(lambda:self.storage('cmath.phase',1))
+		self.arg.clicked.connect(lambda:self.display_screen('Arg('))
+		self.arg.clicked.connect(lambda:self.storage('math.degrees(cmath.phase',1))
 		self.b_open.clicked.connect(lambda:self.display_screen(' ( '))
 		self.b_open.clicked.connect(lambda:self.storage(' ( ',1))
 		self.sin.clicked.connect(lambda:self.display_screen(' sin( '))
@@ -81,6 +106,8 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 	stack = []
 	stack_disp = []
 	temp = []
+
+
 	def storage1(self,value):
 		try:
 			self.stack.pop()

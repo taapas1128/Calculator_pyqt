@@ -25,7 +25,7 @@ except AttributeError:
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
-        Dialog.resize(426, 478)
+        Dialog.resize(449, 478)
         Dialog.setStyleSheet(_fromUtf8("\n"
 "QToolTip\n"
 "{\n"
@@ -141,65 +141,7 @@ class Ui_Dialog(object):
 "    image: url(:/qss_icons/rc/checkbox_unchecked_disabled.png);\n"
 "}\n"
 "\n"
-"QRadioButton\n"
-"{\n"
-"    spacing: 5px;\n"
-"    outline: none;\n"
-"    color: #eff0f1;\n"
-"    margin-bottom: 2px;\n"
-"}\n"
 "\n"
-"QRadioButton:disabled\n"
-"{\n"
-"    color: #76797C;\n"
-"}\n"
-"QRadioButton::indicator\n"
-"{\n"
-"    width: 21px;\n"
-"    height: 21px;\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:unchecked\n"
-"{\n"
-"    image: url(:/qss_icons/rc/radio_unchecked.png);\n"
-"}\n"
-"\n"
-"\n"
-"QRadioButton::indicator:unchecked:hover,\n"
-"QRadioButton::indicator:unchecked:focus,\n"
-"QRadioButton::indicator:unchecked:pressed\n"
-"{\n"
-"    border: none;\n"
-"    outline: none;\n"
-"    image: url(:/qss_icons/rc/radio_unchecked_focus.png);\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:checked\n"
-"{\n"
-"    border: none;\n"
-"    outline: none;\n"
-"    image: url(:/qss_icons/rc/radio_checked.png);\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:checked:hover,\n"
-"QRadioButton::indicator:checked:focus,\n"
-"QRadioButton::indicator:checked:pressed\n"
-"{\n"
-"    border: none;\n"
-"    outline: none;\n"
-"    image: url(:/qss_icons/rc/radio_checked_focus.png);\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:checked:disabled\n"
-"{\n"
-"    outline: none;\n"
-"    image: url(:/qss_icons/rc/radio_checked_disabled.png);\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:unchecked:disabled\n"
-"{\n"
-"    image: url(:/qss_icons/rc/radio_unchecked_disabled.png);\n"
-"}\n"
 "\n"
 "\n"
 "QMenuBar\n"
@@ -1402,11 +1344,48 @@ class Ui_Dialog(object):
         self.pi.setGeometry(QtCore.QRect(290, 410, 61, 51))
         self.pi.setObjectName(_fromUtf8("pi"))
         self.bco = QtGui.QPushButton(Dialog)
-        self.bco.setGeometry(QtCore.QRect(360, 110, 61, 171))
+        self.bco.setGeometry(QtCore.QRect(360, 230, 81, 111))
         self.bco.setObjectName(_fromUtf8("bco"))
         self.arg = QtGui.QPushButton(Dialog)
-        self.arg.setGeometry(QtCore.QRect(360, 290, 61, 171))
+        self.arg.setGeometry(QtCore.QRect(360, 350, 81, 111))
         self.arg.setObjectName(_fromUtf8("arg"))
+        self.r1 = QtGui.QRadioButton(Dialog)
+        self.r1.setGeometry(QtCore.QRect(360, 110, 81, 51))
+        self.r1.setObjectName(_fromUtf8("r1"))
+        self.arg.raise_()
+        self.b1.raise_()
+        self.b3.raise_()
+        self.b2.raise_()
+        self.b6.raise_()
+        self.b5.raise_()
+        self.b4.raise_()
+        self.b9.raise_()
+        self.b8.raise_()
+        self.b7.raise_()
+        self.plus_minus.raise_()
+        self.b0.raise_()
+        self.decimal.raise_()
+        self.display.raise_()
+        self.equal.raise_()
+        self.clear.raise_()
+        self.back.raise_()
+        self.add.raise_()
+        self.substract.raise_()
+        self.divide.raise_()
+        self.multiply.raise_()
+        self.sq_root.raise_()
+        self.sin.raise_()
+        self.cos.raise_()
+        self.tan.raise_()
+        self.power.raise_()
+        self.log.raise_()
+        self.b_open.raise_()
+        self.b_close.raise_()
+        self.ln.raise_()
+        self.e.raise_()
+        self.pi.raise_()
+        self.r1.raise_()
+        self.bco.raise_()
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -1445,4 +1424,5 @@ class Ui_Dialog(object):
         self.pi.setText(_translate("Dialog", "π", None))
         self.bco.setText(_translate("Dialog", "j", None))
         self.arg.setText(_translate("Dialog", "Arg", None))
+        self.r1.setText(_translate("Dialog", "Complex Mode", None))
 
