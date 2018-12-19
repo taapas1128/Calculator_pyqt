@@ -2,10 +2,10 @@ from __future__ import division
 import sys
 from PyQt4 import QtGui
 import calculator
-import matrixop
+from matrixop import matrix_class
 import math
 prev= ""
-class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow,matrixop.matrix_class):
+class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 	def OpenWindow(self):
 		self.window=QtGui.QMainWindow()
 		self.ui=matrix_class()
