@@ -1,11 +1,18 @@
 from __future__ import division
-import numpy as np
 import sys
 from PyQt4 import QtGui
 import calculator
+import matrixop
 import math
 prev= ""
-class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
+class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow,matrixop.matrix_class):
+	def OpenWindow(self):
+		self.window=QtGui.QMainWindow()
+		self.ui=matrix_class()
+		self.ui.setupUi(self.window)
+		self.window.show()
+
+
 
 	def __init__(self):
 		super(calculator_class, self).__init__()
@@ -54,26 +61,8 @@ class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 		self.b_open.clicked.connect(lambda:self.storage(' ( ',1))
 		self.sin.clicked.connect(lambda:self.display_screen(' sin( '))
 		self.sin.clicked.connect(lambda:self.storage('math.sin( ',1))
-		self.newmat.clicked.connect(lambda:self.display_screen('matrix('))
-		self.newmat.clicked.connect(lambda:self.storage('np.array(',1))
-		self.addmat.clicked.connect(lambda:self.display_screen('add_matrix('))
-		self.addmat.clicked.connect(lambda:self.storage('np.add(',1))
-		self.mat_mult.clicked.connect(lambda:self.display_screen('multiply('))
-		self.mat_mult.clicked.connect(lambda:self.storage('np.dot(',1))
-		self.matinv.clicked.connect(lambda:self.display_screen('matrix_inverse('))
-		self.matinv.clicked.connect(lambda:self.storage('np.linalg.inv(',1))
-		self.subr_mat.clicked.connect(lambda:self.display_screen('subtract_matrix('))
-		self.subr_mat.clicked.connect(lambda:self.storage('np.subtract(',1))
-		self.cm.clicked.connect(lambda:self.display_screen(','))
-		self.cm.clicked.connect(lambda:self.storage(',',1))
-		self.sqcl.clicked.connect(lambda:self.display_screen(']'))
-		self.sqcl.clicked.connect(lambda:self.storage(']',1))
-		self.sqop.clicked.connect(lambda:self.display_screen('['))
-		self.sqop.clicked.connect(lambda:self.storage('[',1))
 		self.cos.clicked.connect(lambda:self.display_screen(' cos( '))
 		self.cos.clicked.connect(lambda:self.storage(' math.cos( ',1))
-		self.fact.clicked.connect(lambda:self.display_screen('factorial('))
-		self.fact.clicked.connect(lambda:self.storage('math.factorial(',1))
 		self.tan.clicked.connect(lambda:self.display_screen(' tan( '))
 		self.tan.clicked.connect(lambda:self.storage(' math.tan( ',1))
 		self.sq_root.clicked.connect(lambda:self.display_screen(' sqrt( '))
@@ -89,6 +78,14 @@ class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 		self.back.clicked.connect(lambda:self.storage1(self.store))
 		self.equal.clicked.connect(self.calculation)
 		self.display.setReadOnly(True)
+		self.matrix.clicked.connect(self.OpenWindow)
+
+
+		
+
+        
+		
+		
 	
 	store= ""
 	prev_disp = ""
@@ -166,8 +163,6 @@ class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 			self.stack.append(final_value)
 			print(self.store)	
 			self.disp_res(" = " + final_value)
-	
-	
 
 if __name__== '__main__':
 	qapp=QtGui.QApplication(sys.argv)
