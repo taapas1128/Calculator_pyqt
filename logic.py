@@ -2,15 +2,13 @@ from __future__ import division
 import sys
 from PyQt4 import QtGui
 import calculator
-from matrixop import matrix_class
+from subprocess import call
 import math
 prev= ""
 class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 	def OpenWindow(self):
-		self.window=QtGui.QMainWindow()
-		self.ui=matrix_class()
-		self.ui.setupUi(self.window)
-		self.window.show()
+		call(['python','matrixop.py'])
+
 
 
 
