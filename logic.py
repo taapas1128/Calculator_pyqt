@@ -16,7 +16,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 			self.log.hide()
 			self.ln.hide()
 			self.sq_root.hide()
-			self.e.hide()
+			
 		else:
 			self.bco.hide()
 			self.arg.hide()
