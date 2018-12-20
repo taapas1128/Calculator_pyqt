@@ -78,10 +78,14 @@ This is a basic PyQt based scientific calculator.
 
 * You can also go through these set of videos for understanding the framework and functioning of qt designer. Click [here](https://www.youtube.com/watch?v=iDJlGV8Rvgg).
 
-* Here is the Layout of our scientific calculator!
+* Using the complex mode :
+  There is a button labelled "complex" in the upper right corner of the calculator. Press it to enter the complex mode. Here   you can perform operations on complex numbers. Imaginary numbers are represented in A + Bj format. If the complex part of     your number, B is 1, you have to write the number as A + 1j. After giving a proper input you can perform all operations       such as addition, subtraction, multiplication, division and exponents. You can also find argument of the complex number       by pressing the "Arg" button. You can switch back to normal mode by pressing the "complex" button again.
   
-  ![calculator](calc.jpg)
+* Here is the Layout of our scientific calculator!  
 
+  ![calculator](cal.png)
+  ![calculator](cmplx_calc.png)
+  
 ## Support:
 
 For any queries, please raise an issue or contact github@taapas1128.
