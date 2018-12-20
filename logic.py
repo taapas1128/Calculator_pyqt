@@ -2,19 +2,42 @@ from __future__ import division
 import sys
 from PyQt4 import QtGui
 import calculator
-from subprocess import call
 import math
+import cmath
+from subprocess import call
 prev= ""
 class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 	def OpenWindow(self):
 		call(['python','matrixop.py'])
+	def btnstate(self,r1):
+		if r1.isChecked() == True:
+			self.bco.show()
+			self.arg.show()
+			self.sin.hide()
+			self.cos.hide()
+			self.tan.hide()
+			self.log.hide()
+			self.ln.hide()
+			self.sq_root.hide()
 
-
-
+		else:
+			self.bco.hide()
+			self.arg.hide()
+			self.sin.show()
+			self.cos.show()
+			self.tan.show()
+			self.log.show()
+			self.ln.show()
+			self.sq_root.show()
+			self.e.show()
 
 	def __init__(self):
 		super(calculator_class, self).__init__()
 		self.setupUi(self)
+		self.r1.setChecked(False)
+		self.bco.hide()
+		self.arg.hide()
+		self.r1.toggled.connect(lambda:self.btnstate(self.r1))
 		self.b0.clicked.connect(lambda:self.display_screen('0'))
 		self.b0.clicked.connect(lambda:self.storage('0',1))
 		self.b1.clicked.connect(lambda:self.display_screen('1'))
@@ -35,8 +58,10 @@ class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 		self.b8.clicked.connect(lambda:self.storage('8',1))
 		self.b9.clicked.connect(lambda:self.display_screen('9'))
 		self.b9.clicked.connect(lambda:self.storage('9',1))
+		self.bco.clicked.connect(lambda:self.display_screen('j'))
+		self.bco.clicked.connect(lambda:self.storage('j',1))
 		self.decimal.clicked.connect(lambda:self.display_screen('.'))
-		self.decimal.clicked.connect(lambda:self.storage('.',1))		
+		self.decimal.clicked.connect(lambda:self.storage('.',1))
 		self.add.clicked.connect(lambda:self.display_screen(' + '))
 		self.add.clicked.connect(lambda:self.storage(' + ',1))
 		self.substract.clicked.connect(lambda:self.display_screen(' - '))
@@ -55,6 +80,8 @@ class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 		self.pi.clicked.connect(lambda:self.storage('math.pi',1))
 		self.e.clicked.connect(lambda:self.display_screen('e'))
 		self.e.clicked.connect(lambda:self.storage('math.e',1))
+		self.arg.clicked.connect(lambda:self.display_screen('Arg('))
+		self.arg.clicked.connect(lambda:self.storage('(180/(math.pi))*cmath.phase(',1))
 		self.b_open.clicked.connect(lambda:self.display_screen(' ( '))
 		self.b_open.clicked.connect(lambda:self.storage(' ( ',1))
 		self.sin.clicked.connect(lambda:self.display_screen(' sin( '))
@@ -78,18 +105,13 @@ class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 		self.display.setReadOnly(True)
 		self.matrix.clicked.connect(self.OpenWindow)
 
-
-		
-
-        
-		
-		
-	
 	store= ""
 	prev_disp = ""
 	stack = []
-	stack_disp = []	
+	stack_disp = []
 	temp = []
+
+
 	def storage1(self,value):
 		try:
 			self.stack.pop()
@@ -110,7 +132,7 @@ class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 	def display_screen(self,value):
 		self.display.insert(value)
 		self.stack_disp.append(value)
-		
+
 	def display_screen1(self,value):
 		self.display.setText(value)
 		self.stack_disp.append(value)
@@ -122,7 +144,7 @@ class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 			self.display_screen1("")
 		else:
 			self.temp = self.stack_disp
-			value = ''.join(self.temp)		
+			value = ''.join(self.temp)
 			self.display.setText(value)
 
 	def display_error(self,value):
@@ -137,7 +159,7 @@ class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 		screen_value=self.store
 		screen_value=str(screen_value)
 		print(''.join(self.stack))
-		try:		
+		try:
 			final_value=eval(screen_value)
 		except ZeroDivisionError:
 			print("Math Error : Division by Zero")
@@ -155,12 +177,14 @@ class calculator_class(calculator.Ui_MainWindow,QtGui.QMainWindow):
 			print("Input Error : Please enter proper input")
 			self.stack.append('#')
 			self.display_error("Input Error : Please enter proper input")
-		else:		
+		else:
 			final_value=str(final_value)
 			self.store=final_value
 			self.stack.append(final_value)
-			print(self.store)	
+			print(self.store)
 			self.disp_res(" = " + final_value)
+
+
 
 if __name__== '__main__':
 	qapp=QtGui.QApplication(sys.argv)

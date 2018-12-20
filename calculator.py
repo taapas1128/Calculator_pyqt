@@ -25,111 +25,367 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(401, 671)
+        MainWindow.resize(436, 600)
+        MainWindow.setStyleSheet(_fromUtf8("\n"
+"QToolTip\n"
+"{\n"
+"     border: 1px solid black;\n"
+"     background-color: #D1DBCB;\n"
+"     padding: 1px;\n"
+"     border-radius: 3px;\n"
+"     opacity: 100;\n"
+"}\n"
+"\n"
+"QWidget\n"
+"{\n"
+"    color: #b1b1b1;\n"
+"    background-color: #323232;\n"
+"    selection-background-color:#323232;\n"
+"    selection-color: black;\n"
+"    background-clip: border;\n"
+"    border-image: none;\n"
+"    border: 0px transparent black;\n"
+"    outline: 0;\n"
+"}\n"
+"\n"
+"QWidget:item:hover\n"
+"{\n"
+"    background-color: #D1DBCB;\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"QWidget:item:selected\n"
+"{\n"
+"    background-color: #D1DBCB;\n"
+"    border: 0px\n"
+"}\n"
+"\n"
+"QLineEdit\n"
+"{\n"
+"    background-color: #1e1e1e;\n"
+"    selection-background-color: #D1DBCB;\n"
+"    selection-color: black;\n"
+"    padding: 5px;\n"
+"    border-style: solid;\n"
+"    border: 1px solid #76797C;\n"
+"    border-radius: 2px;\n"
+"    color: #eff0f1;\n"
+"}\n"
+"QPushButton::menu-indicator  {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: bottom right;\n"
+"    left: 8px;\n"
+"}\n"
+"QPushButton\n"
+"{\n"
+"    color: #eff0f1;\n"
+"    background-color: #323232;\n"
+"    border-width: 1px;\n"
+"    border-color: #76797C;\n"
+"    border-style: solid;\n"
+"    padding: 5px;\n"
+"    border-radius: 0px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"QPushButton:disabled\n"
+"{\n"
+"    background-color: #323232;\n"
+"    border-width: 1px;\n"
+"    border-color: #454545;\n"
+"    border-style: solid;\n"
+"    padding-top: 5px;\n"
+"    padding-bottom: 5px;\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"    border-radius: 2px;\n"
+"    color: #454545;\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"    background-color: #D1DBCB;\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"    color: black;\n"
+"    background-color: #D1DBCB;\n"
+"    padding-top: -15px;\n"
+"    padding-bottom: -17px;\n"
+"}\n"
+"\n"
+"QComboBox\n"
+"{\n"
+"    selection-background-color: #D1DBCB;\n"
+"    background-color: #31363B;\n"
+"    border-style: solid;\n"
+"    border: 1px solid #76797C;\n"
+"    border-radius: 2px;\n"
+"    padding: 5px;\n"
+"    min-width: 75px;\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"    background-color: #76797C;\n"
+"    border-color: #6A6969;\n"
+"}\n"
+"\n"
+"QComboBox:hover,QPushButton:hover,QAbstractSpinBox:hover,QLineEdit:hover,QTextEdit:hover,QPlainTextEdit:hover,QAbstractView:hover,QTreeView:hover\n"
+"{\n"
+"    border: 1px solid #D1DBCB;\n"
+"}\n"
+"QTabWidget:focus, QCheckBox:focus, QRadioButton:focus, QSlider:focus\n"
+"{\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QHeaderView::section\n"
+"{\n"
+"    background-color: #76797C;\n"
+"    color: #eff0f1;\n"
+"    padding: 5px;\n"
+"    border: 1px solid #76797C;\n"
+"}\n"
+"\n"
+"QSizeGrip {\n"
+"    image: url(:/qss_icons/rc/sizegrip.png);\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"}\n"
+"\n"
+"\n"
+"QMainWindow::separator\n"
+"{\n"
+"    background-color: #323232;\n"
+"    color: white;\n"
+"    padding-left: 4px;\n"
+"    spacing: 2px;\n"
+"    border: 1px dashed #76797C;\n"
+"}\n"
+"\n"
+"QMainWindow::separator:hover\n"
+"{\n"
+"\n"
+"    background-color: #787876;\n"
+"    color: white;\n"
+"    padding-left: 4px;\n"
+"    border: 1px solid #76797C;\n"
+"    spacing: 2px;\n"
+"}\n"
+"\n"
+"\n"
+"QMenu::separator\n"
+"{\n"
+"    height: 1px;\n"
+"    background-color: #76797C;\n"
+"    color: white;\n"
+"    padding-left: 4px;\n"
+"    margin-left: 10px;\n"
+"    margin-right: 5px;\n"
+"}\n"
+"\n"
+"QFrame\n"
+"{\n"
+"    border-radius: 0px;\n"
+"    /*border: 1px solid #76797C;*/\n"
+"}\n"
+"\n"
+"\n"
+"QFrame[frameShape=\"0\"]\n"
+"{\n"
+"    border-radius: 0px;\n"
+"    border: 0px transparent #76797C;\n"
+"}\n"
+"\n"
+"QStackedWidget\n"
+"{\n"
+"    border: 1px transparent black;\n"
+"}"))
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
-        self.graph = QtGui.QPushButton(self.centralwidget)
-        self.graph.setGeometry(QtCore.QRect(170, 520, 131, 51))
-        self.graph.setObjectName(_fromUtf8("graph"))
-        self.b5 = QtGui.QPushButton(self.centralwidget)
-        self.b5.setGeometry(QtCore.QRect(100, 220, 61, 51))
-        self.b5.setObjectName(_fromUtf8("b5"))
-        self.clear = QtGui.QPushButton(self.centralwidget)
-        self.clear.setGeometry(QtCore.QRect(240, 160, 61, 51))
-        self.clear.setObjectName(_fromUtf8("clear"))
-        self.b9 = QtGui.QPushButton(self.centralwidget)
-        self.b9.setGeometry(QtCore.QRect(170, 160, 61, 51))
-        self.b9.setObjectName(_fromUtf8("b9"))
-        self.equal = QtGui.QPushButton(self.centralwidget)
-        self.equal.setGeometry(QtCore.QRect(240, 340, 61, 51))
-        self.equal.setObjectName(_fromUtf8("equal"))
-        self.b6 = QtGui.QPushButton(self.centralwidget)
-        self.b6.setGeometry(QtCore.QRect(170, 220, 61, 51))
-        self.b6.setObjectName(_fromUtf8("b6"))
-        self.tan = QtGui.QPushButton(self.centralwidget)
-        self.tan.setGeometry(QtCore.QRect(170, 400, 61, 51))
-        self.tan.setObjectName(_fromUtf8("tan"))
-        self.b1 = QtGui.QPushButton(self.centralwidget)
-        self.b1.setGeometry(QtCore.QRect(30, 280, 61, 51))
+        self.frame = QtGui.QFrame(self.centralwidget)
+        self.frame.setGeometry(QtCore.QRect(10, 10, 431, 531))
+        self.frame.setFrameShape(QtGui.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtGui.QFrame.Raised)
+        self.frame.setObjectName(_fromUtf8("frame"))
+        self.b1 = QtGui.QPushButton(self.frame)
+        self.b1.setGeometry(QtCore.QRect(30, 230, 61, 51))
         self.b1.setObjectName(_fromUtf8("b1"))
-        self.pi = QtGui.QPushButton(self.centralwidget)
-        self.pi.setGeometry(QtCore.QRect(310, 460, 61, 51))
-        self.pi.setObjectName(_fromUtf8("pi"))
-        self.display = QtGui.QLineEdit(self.centralwidget)
-        self.display.setGeometry(QtCore.QRect(30, 10, 341, 141))
-        self.display.setObjectName(_fromUtf8("display"))
-        self.b0 = QtGui.QPushButton(self.centralwidget)
-        self.b0.setGeometry(QtCore.QRect(30, 340, 61, 51))
-        self.b0.setObjectName(_fromUtf8("b0"))
-        self.b_open = QtGui.QPushButton(self.centralwidget)
-        self.b_open.setGeometry(QtCore.QRect(30, 460, 61, 51))
-        self.b_open.setObjectName(_fromUtf8("b_open"))
-        self.substract = QtGui.QPushButton(self.centralwidget)
-        self.substract.setGeometry(QtCore.QRect(240, 280, 61, 51))
-        self.substract.setObjectName(_fromUtf8("substract"))
-        self.ln = QtGui.QPushButton(self.centralwidget)
-        self.ln.setGeometry(QtCore.QRect(170, 460, 61, 51))
-        self.ln.setObjectName(_fromUtf8("ln"))
-        self.multiply = QtGui.QPushButton(self.centralwidget)
-        self.multiply.setGeometry(QtCore.QRect(310, 220, 61, 51))
-        self.multiply.setObjectName(_fromUtf8("multiply"))
-        self.b4 = QtGui.QPushButton(self.centralwidget)
-        self.b4.setGeometry(QtCore.QRect(30, 220, 61, 51))
-        self.b4.setObjectName(_fromUtf8("b4"))
-        self.power = QtGui.QPushButton(self.centralwidget)
-        self.power.setGeometry(QtCore.QRect(240, 400, 61, 51))
-        self.power.setObjectName(_fromUtf8("power"))
-        self.b3 = QtGui.QPushButton(self.centralwidget)
-        self.b3.setGeometry(QtCore.QRect(170, 280, 61, 51))
-        self.b3.setObjectName(_fromUtf8("b3"))
-        self.b7 = QtGui.QPushButton(self.centralwidget)
-        self.b7.setGeometry(QtCore.QRect(30, 160, 61, 51))
-        self.b7.setObjectName(_fromUtf8("b7"))
-        self.add = QtGui.QPushButton(self.centralwidget)
-        self.add.setGeometry(QtCore.QRect(240, 220, 61, 51))
-        self.add.setObjectName(_fromUtf8("add"))
-        self.b_close = QtGui.QPushButton(self.centralwidget)
-        self.b_close.setGeometry(QtCore.QRect(100, 460, 61, 51))
-        self.b_close.setObjectName(_fromUtf8("b_close"))
-        self.plus_minus = QtGui.QPushButton(self.centralwidget)
-        self.plus_minus.setGeometry(QtCore.QRect(100, 340, 61, 51))
-        self.plus_minus.setObjectName(_fromUtf8("plus_minus"))
-        self.decimal = QtGui.QPushButton(self.centralwidget)
-        self.decimal.setGeometry(QtCore.QRect(170, 340, 61, 51))
-        self.decimal.setObjectName(_fromUtf8("decimal"))
-        self.log = QtGui.QPushButton(self.centralwidget)
-        self.log.setGeometry(QtCore.QRect(310, 400, 61, 51))
-        self.log.setObjectName(_fromUtf8("log"))
-        self.b2 = QtGui.QPushButton(self.centralwidget)
-        self.b2.setGeometry(QtCore.QRect(100, 280, 61, 51))
-        self.b2.setObjectName(_fromUtf8("b2"))
-        self.cos = QtGui.QPushButton(self.centralwidget)
-        self.cos.setGeometry(QtCore.QRect(100, 400, 61, 51))
-        self.cos.setObjectName(_fromUtf8("cos"))
-        self.divide = QtGui.QPushButton(self.centralwidget)
-        self.divide.setGeometry(QtCore.QRect(310, 280, 61, 51))
-        self.divide.setObjectName(_fromUtf8("divide"))
-        self.e = QtGui.QPushButton(self.centralwidget)
-        self.e.setGeometry(QtCore.QRect(240, 460, 61, 51))
+        self.e = QtGui.QPushButton(self.frame)
+        self.e.setGeometry(QtCore.QRect(240, 410, 61, 51))
         self.e.setObjectName(_fromUtf8("e"))
-        self.b8 = QtGui.QPushButton(self.centralwidget)
-        self.b8.setGeometry(QtCore.QRect(100, 160, 61, 51))
+        self.r1 = QtGui.QRadioButton(self.frame)
+        self.r1.setGeometry(QtCore.QRect(310, 110, 91, 51))
+        self.r1.setObjectName(_fromUtf8("r1"))
+        self.add = QtGui.QPushButton(self.frame)
+        self.add.setGeometry(QtCore.QRect(240, 170, 61, 51))
+        self.add.setObjectName(_fromUtf8("add"))
+        self.equal = QtGui.QPushButton(self.frame)
+        self.equal.setGeometry(QtCore.QRect(240, 290, 61, 51))
+        self.equal.setObjectName(_fromUtf8("equal"))
+        self.multiply = QtGui.QPushButton(self.frame)
+        self.multiply.setGeometry(QtCore.QRect(240, 110, 61, 51))
+        self.multiply.setObjectName(_fromUtf8("multiply"))
+        self.b8 = QtGui.QPushButton(self.frame)
+        self.b8.setGeometry(QtCore.QRect(100, 110, 61, 51))
         self.b8.setObjectName(_fromUtf8("b8"))
-        self.sin = QtGui.QPushButton(self.centralwidget)
-        self.sin.setGeometry(QtCore.QRect(30, 400, 61, 51))
+        self.b9 = QtGui.QPushButton(self.frame)
+        self.b9.setGeometry(QtCore.QRect(170, 110, 61, 51))
+        self.b9.setObjectName(_fromUtf8("b9"))
+        self.bco = QtGui.QPushButton(self.frame)
+        self.bco.setGeometry(QtCore.QRect(220, 350, 181, 51))
+        self.bco.setObjectName(_fromUtf8("bco"))
+        self.clear = QtGui.QPushButton(self.frame)
+        self.clear.setGeometry(QtCore.QRect(310, 170, 91, 51))
+        self.clear.setObjectName(_fromUtf8("clear"))
+        self.tan = QtGui.QPushButton(self.frame)
+        self.tan.setGeometry(QtCore.QRect(150, 350, 51, 51))
+        self.tan.setObjectName(_fromUtf8("tan"))
+        self.pi = QtGui.QPushButton(self.frame)
+        self.pi.setGeometry(QtCore.QRect(310, 410, 91, 51))
+        self.pi.setObjectName(_fromUtf8("pi"))
+        self.cos = QtGui.QPushButton(self.frame)
+        self.cos.setGeometry(QtCore.QRect(90, 350, 51, 51))
+        self.cos.setObjectName(_fromUtf8("cos"))
+        self.log = QtGui.QPushButton(self.frame)
+        self.log.setGeometry(QtCore.QRect(270, 350, 61, 51))
+        self.log.setObjectName(_fromUtf8("log"))
+        self.sin = QtGui.QPushButton(self.frame)
+        self.sin.setGeometry(QtCore.QRect(30, 350, 51, 51))
         self.sin.setObjectName(_fromUtf8("sin"))
-        self.sq_root = QtGui.QPushButton(self.centralwidget)
-        self.sq_root.setGeometry(QtCore.QRect(310, 340, 61, 51))
-        self.sq_root.setObjectName(_fromUtf8("sq_root"))
-        self.matrix = QtGui.QPushButton(self.centralwidget)
-        self.matrix.setGeometry(QtCore.QRect(30, 520, 131, 51))
-        self.matrix.setObjectName(_fromUtf8("matrix"))
-        self.back = QtGui.QPushButton(self.centralwidget)
-        self.back.setGeometry(QtCore.QRect(310, 160, 61, 51))
+        self.power = QtGui.QPushButton(self.frame)
+        self.power.setGeometry(QtCore.QRect(170, 410, 61, 51))
+        self.power.setObjectName(_fromUtf8("power"))
+        self.b7 = QtGui.QPushButton(self.frame)
+        self.b7.setGeometry(QtCore.QRect(30, 110, 61, 51))
+        self.b7.setObjectName(_fromUtf8("b7"))
+        self.plus_minus = QtGui.QPushButton(self.frame)
+        self.plus_minus.setGeometry(QtCore.QRect(100, 290, 61, 51))
+        self.plus_minus.setObjectName(_fromUtf8("plus_minus"))
+        self.decimal = QtGui.QPushButton(self.frame)
+        self.decimal.setGeometry(QtCore.QRect(170, 290, 61, 51))
+        self.decimal.setObjectName(_fromUtf8("decimal"))
+        self.back = QtGui.QPushButton(self.frame)
+        self.back.setGeometry(QtCore.QRect(310, 230, 91, 51))
         self.back.setObjectName(_fromUtf8("back"))
+        self.sq_root = QtGui.QPushButton(self.frame)
+        self.sq_root.setGeometry(QtCore.QRect(340, 350, 61, 51))
+        self.sq_root.setObjectName(_fromUtf8("sq_root"))
+        self.b2 = QtGui.QPushButton(self.frame)
+        self.b2.setGeometry(QtCore.QRect(100, 230, 61, 51))
+        self.b2.setObjectName(_fromUtf8("b2"))
+        self.arg = QtGui.QPushButton(self.frame)
+        self.arg.setGeometry(QtCore.QRect(30, 350, 181, 51))
+        self.arg.setObjectName(_fromUtf8("arg"))
+        self.b3 = QtGui.QPushButton(self.frame)
+        self.b3.setGeometry(QtCore.QRect(170, 230, 61, 51))
+        self.b3.setObjectName(_fromUtf8("b3"))
+        self.b6 = QtGui.QPushButton(self.frame)
+        self.b6.setGeometry(QtCore.QRect(170, 170, 61, 51))
+        self.b6.setObjectName(_fromUtf8("b6"))
+        self.b_open = QtGui.QPushButton(self.frame)
+        self.b_open.setGeometry(QtCore.QRect(30, 410, 61, 51))
+        self.b_open.setObjectName(_fromUtf8("b_open"))
+        self.b_close = QtGui.QPushButton(self.frame)
+        self.b_close.setGeometry(QtCore.QRect(100, 410, 61, 51))
+        self.b_close.setObjectName(_fromUtf8("b_close"))
+        self.b4 = QtGui.QPushButton(self.frame)
+        self.b4.setGeometry(QtCore.QRect(30, 170, 61, 51))
+        self.b4.setObjectName(_fromUtf8("b4"))
+        self.b0 = QtGui.QPushButton(self.frame)
+        self.b0.setGeometry(QtCore.QRect(30, 290, 61, 51))
+        self.b0.setObjectName(_fromUtf8("b0"))
+        self.substract = QtGui.QPushButton(self.frame)
+        self.substract.setGeometry(QtCore.QRect(240, 230, 61, 51))
+        self.substract.setObjectName(_fromUtf8("substract"))
+        self.divide = QtGui.QPushButton(self.frame)
+        self.divide.setGeometry(QtCore.QRect(310, 290, 91, 51))
+        self.divide.setObjectName(_fromUtf8("divide"))
+        self.b5 = QtGui.QPushButton(self.frame)
+        self.b5.setGeometry(QtCore.QRect(100, 170, 61, 51))
+        self.b5.setObjectName(_fromUtf8("b5"))
+        self.ln = QtGui.QPushButton(self.frame)
+        self.ln.setGeometry(QtCore.QRect(210, 350, 51, 51))
+        self.ln.setObjectName(_fromUtf8("ln"))
+        self.display = QtGui.QLineEdit(self.frame)
+        self.display.setGeometry(QtCore.QRect(30, 20, 371, 71))
+        self.display.setObjectName(_fromUtf8("display"))
+        self.matrix = QtGui.QPushButton(self.frame)
+        self.matrix.setGeometry(QtCore.QRect(30, 470, 131, 41))
+        self.matrix.setObjectName(_fromUtf8("matrix"))
+        self.b1.raise_()
+        self.e.raise_()
+        self.r1.raise_()
+        self.add.raise_()
+        self.equal.raise_()
+        self.multiply.raise_()
+        self.b8.raise_()
+        self.b9.raise_()
+        self.bco.raise_()
+        self.clear.raise_()
+        self.tan.raise_()
+        self.pi.raise_()
+        self.cos.raise_()
+        self.log.raise_()
+        self.sin.raise_()
+        self.power.raise_()
+        self.b7.raise_()
+        self.decimal.raise_()
+        self.plus_minus.raise_()
+        self.back.raise_()
+        self.sq_root.raise_()
+        self.b2.raise_()
+        self.arg.raise_()
+        self.b3.raise_()
+        self.b_open.raise_()
+        self.b6.raise_()
+        self.b_close.raise_()
+        self.b4.raise_()
+        self.substract.raise_()
+        self.b0.raise_()
+        self.divide.raise_()
+        self.b5.raise_()
+        self.ln.raise_()
+        self.display.raise_()
+        self.b1.raise_()
+        self.e.raise_()
+        self.r1.raise_()
+        self.add.raise_()
+        self.equal.raise_()
+        self.multiply.raise_()
+        self.b8.raise_()
+        self.b9.raise_()
+        self.bco.raise_()
+        self.clear.raise_()
+        self.tan.raise_()
+        self.pi.raise_()
+        self.cos.raise_()
+        self.log.raise_()
+        self.sin.raise_()
+        self.power.raise_()
+        self.b7.raise_()
+        self.plus_minus.raise_()
+        self.decimal.raise_()
+        self.back.raise_()
+        self.sq_root.raise_()
+        self.b2.raise_()
+        self.arg.raise_()
+        self.b3.raise_()
+        self.b6.raise_()
+        self.b_open.raise_()
+        self.b_close.raise_()
+        self.b4.raise_()
+        self.b0.raise_()
+        self.substract.raise_()
+        self.divide.raise_()
+        self.b5.raise_()
+        self.ln.raise_()
+        self.display.raise_()
+        self.matrix.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 401, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 436, 26))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(MainWindow)
@@ -141,38 +397,40 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
-        self.graph.setText(_translate("MainWindow", "Graph Mode", None))
-        self.b5.setText(_translate("MainWindow", "5", None))
-        self.clear.setText(_translate("MainWindow", "AC", None))
-        self.b9.setText(_translate("MainWindow", "9", None))
-        self.equal.setText(_translate("MainWindow", "=", None))
-        self.b6.setText(_translate("MainWindow", "6", None))
-        self.tan.setText(_translate("MainWindow", "tan", None))
         self.b1.setText(_translate("MainWindow", "1", None))
-        self.pi.setText(_translate("MainWindow", "π", None))
-        self.b0.setText(_translate("MainWindow", "0", None))
-        self.b_open.setText(_translate("MainWindow", "(", None))
-        self.substract.setText(_translate("MainWindow", "-", None))
-        self.ln.setText(_translate("MainWindow", "ln", None))
-        self.multiply.setText(_translate("MainWindow", "X", None))
-        self.b4.setText(_translate("MainWindow", "4", None))
-        self.power.setText(_translate("MainWindow", "^", None))
-        self.b3.setText(_translate("MainWindow", "3", None))
-        self.b7.setText(_translate("MainWindow", "7", None))
+        self.e.setText(_translate("MainWindow", "e", None))
+        self.r1.setText(_translate("MainWindow", "Complex", None))
         self.add.setText(_translate("MainWindow", "+", None))
-        self.b_close.setText(_translate("MainWindow", ")", None))
+        self.equal.setText(_translate("MainWindow", "=", None))
+        self.multiply.setText(_translate("MainWindow", "X", None))
+        self.b8.setText(_translate("MainWindow", "8", None))
+        self.b9.setText(_translate("MainWindow", "9", None))
+        self.bco.setText(_translate("MainWindow", "j", None))
+        self.clear.setText(_translate("MainWindow", "AC", None))
+        self.tan.setText(_translate("MainWindow", "tan", None))
+        self.pi.setText(_translate("MainWindow", "π", None))
+        self.cos.setText(_translate("MainWindow", "cos", None))
+        self.log.setText(_translate("MainWindow", "log", None))
+        self.sin.setText(_translate("MainWindow", "sin", None))
+        self.power.setText(_translate("MainWindow", "^", None))
+        self.b7.setText(_translate("MainWindow", "7", None))
         self.plus_minus.setText(_translate("MainWindow", "+/-", None))
         self.decimal.setText(_translate("MainWindow", ".", None))
-        self.log.setText(_translate("MainWindow", "log", None))
-        self.b2.setText(_translate("MainWindow", "2", None))
-        self.cos.setText(_translate("MainWindow", "cos", None))
-        self.divide.setText(_translate("MainWindow", "/", None))
-        self.e.setText(_translate("MainWindow", "e", None))
-        self.b8.setText(_translate("MainWindow", "8", None))
-        self.sin.setText(_translate("MainWindow", "sin", None))
-        self.sq_root.setText(_translate("MainWindow", "Sqrt", None))
-        self.matrix.setText(_translate("MainWindow", "Matrix mode", None))
         self.back.setText(_translate("MainWindow", "Back", None))
+        self.sq_root.setText(_translate("MainWindow", "Sqrt", None))
+        self.b2.setText(_translate("MainWindow", "2", None))
+        self.arg.setText(_translate("MainWindow", "Arg", None))
+        self.b3.setText(_translate("MainWindow", "3", None))
+        self.b6.setText(_translate("MainWindow", "6", None))
+        self.b_open.setText(_translate("MainWindow", "(", None))
+        self.b_close.setText(_translate("MainWindow", ")", None))
+        self.b4.setText(_translate("MainWindow", "4", None))
+        self.b0.setText(_translate("MainWindow", "0", None))
+        self.substract.setText(_translate("MainWindow", "-", None))
+        self.divide.setText(_translate("MainWindow", "/", None))
+        self.b5.setText(_translate("MainWindow", "5", None))
+        self.ln.setText(_translate("MainWindow", "ln", None))
+        self.matrix.setText(_translate("MainWindow", "Matrix", None))
 
 
 if __name__ == "__main__":

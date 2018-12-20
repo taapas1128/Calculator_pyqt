@@ -1,0 +1,1 @@
+pyuic4 -x matrix.ui -o matrix.py

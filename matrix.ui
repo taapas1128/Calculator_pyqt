@@ -7,11 +7,201 @@
     <x>0</x>
     <y>0</y>
     <width>851</width>
-    <height>681</height>
+    <height>670</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>851</width>
+    <height>670</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>851</width>
+    <height>670</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QToolTip
+{
+     border: 1px solid black;
+     background-color: #D1DBCB;
+     padding: 1px;
+     border-radius: 3px;
+     opacity: 100;
+}
+
+QWidget
+{
+    color: #b1b1b1;
+    background-color: #323232;
+    selection-background-color:#323232;
+    selection-color: black;
+    background-clip: border;
+    border-image: none;
+    border: 0px transparent black;
+    outline: 0;
+}
+
+QWidget:item:hover
+{
+    background-color: #D1DBCB;
+    color: black;
+}
+
+QWidget:item:selected
+{
+    background-color: #D1DBCB;
+    border: 0px
+}
+
+QLineEdit
+{
+    background-color: #1e1e1e;
+    selection-background-color: #D1DBCB;
+    selection-color: black;
+    padding: 5px;
+    border-style: solid;
+    border: 1px solid #76797C;
+    border-radius: 2px;
+    color: #eff0f1;
+}
+QPushButton::menu-indicator  {
+    subcontrol-origin: padding;
+    subcontrol-position: bottom right;
+    left: 8px;
+}
+QPushButton
+{
+    color: #eff0f1;
+    background-color: #323232;
+    border-width: 1px;
+    border-color: #76797C;
+    border-style: solid;
+    padding: 5px;
+    border-radius: 0px;
+    outline: none;
+}
+
+QPushButton:disabled
+{
+    background-color: #323232;
+    border-width: 1px;
+    border-color: #454545;
+    border-style: solid;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 2px;
+    color: #454545;
+}
+
+QPushButton:focus {
+    background-color: #D1DBCB;
+    color: black;
+}
+
+QPushButton:pressed
+{
+    color: black;
+    background-color: #D1DBCB;
+    padding-top: -15px;
+    padding-bottom: -17px;
+}
+
+QComboBox
+{
+    selection-background-color: #D1DBCB;
+    background-color: #31363B;
+    border-style: solid;
+    border: 1px solid #76797C;
+    border-radius: 2px;
+    padding: 5px;
+    min-width: 75px;
+}
+
+QPushButton:checked{
+    background-color: #76797C;
+    border-color: #6A6969;
+}
+
+QComboBox:hover,QPushButton:hover,QAbstractSpinBox:hover,QLineEdit:hover,QTextEdit:hover,QPlainTextEdit:hover,QAbstractView:hover,QTreeView:hover
+{
+    border: 1px solid #D1DBCB;
+}
+QTabWidget:focus, QCheckBox:focus, QRadioButton:focus, QSlider:focus
+{
+    border: none;
+}
+
+QHeaderView::section
+{
+    background-color: #76797C;
+    color: #eff0f1;
+    padding: 5px;
+    border: 1px solid #76797C;
+}
+
+QSizeGrip {
+    image: url(:/qss_icons/rc/sizegrip.png);
+    width: 12px;
+    height: 12px;
+}
+
+
+QMainWindow::separator
+{
+    background-color: #323232;
+    color: white;
+    padding-left: 4px;
+    spacing: 2px;
+    border: 1px dashed #76797C;
+}
+
+QMainWindow::separator:hover
+{
+
+    background-color: #787876;
+    color: white;
+    padding-left: 4px;
+    border: 1px solid #76797C;
+    spacing: 2px;
+}
+
+
+QMenu::separator
+{
+    height: 1px;
+    background-color: #76797C;
+    color: white;
+    padding-left: 4px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+QFrame
+{
+    border-radius: 0px;
+    /*border: 1px solid #76797C;*/
+}
+
+
+QFrame[frameShape=&quot;0&quot;]
+{
+    border-radius: 0px;
+    border: 0px transparent #76797C;
+}
+
+QStackedWidget
+{
+    border: 1px transparent black;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame_2">
@@ -91,23 +281,7 @@
        <cursorShape>OpenHandCursor</cursorShape>
       </property>
       <property name="text">
-       <string>New Matrix</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="edit">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>120</y>
-        <width>161</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>OpenHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string>Edit Matrix</string>
+       <string>Add Matrix</string>
       </property>
      </widget>
      <widget class="Line" name="line">
@@ -193,7 +367,7 @@
      <widget class="QPushButton" name="clr">
       <property name="geometry">
        <rect>
-        <x>350</x>
+        <x>190</x>
         <y>120</y>
         <width>161</width>
         <height>51</height>
