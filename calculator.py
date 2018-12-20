@@ -345,7 +345,7 @@ class Ui_Dialog(object):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
+        Dialog.setWindowTitle(_translate("Dialog", "Calculator", None))
         self.b1.setText(_translate("Dialog", "1", None))
         self.b3.setText(_translate("Dialog", "3", None))
         self.b2.setText(_translate("Dialog", "2", None))
