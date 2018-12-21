@@ -16,34 +16,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 			self.log.hide()
 			self.ln.hide()
 			self.sq_root.hide()
-			self.sin1.hide()
-			self.cos1.hide()
-			self.tan1.hide()
-			self.log1.hide()
-			self.ln1.hide()
-			self.squar.hide()
-
-
-	def btnstate1(self,r2):
-		if r2.isChecked() == True:
-			self.bco.hide()
-			self.arg.hide()
-			self.sin.hide()
-			self.cos.hide()
-			self.tan.hide()
-			self.log.hide()
-			self.ln.hide()
-			self.sq_root.hide()
-			self.sin1.show()
-			self.cos1.show()
-			self.tan1.show()
-			self.log1.show()
-			self.ln1.show()
-			self.squar.show()
-
-
-	def btnstate2(self,r3):
-		if r3.isChecked() == True:
+		else:
 			self.bco.hide()
 			self.arg.hide()
 			self.sin.show()
@@ -52,30 +25,14 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 			self.log.show()
 			self.ln.show()
 			self.sq_root.show()
-			self.sin1.hide()
-			self.cos1.hide()
-			self.tan1.hide()
-			self.log1.hide()
-			self.ln1.hide()
-			self.squar.hide()
 
 	def __init__(self):
 		super(calculator_class, self).__init__()
 		self.setupUi(self)
 		self.r1.setChecked(False)
-		self.r2.setChecked(False)
-		self.r3.setChecked(True)
 		self.bco.hide()
 		self.arg.hide()
-		self.sin1.hide()
-		self.cos1.hide()
-		self.tan1.hide()
-		self.ln1.hide()
-		self.log1.hide()
-		self.squar.hide()
 		self.r1.toggled.connect(lambda:self.btnstate(self.r1))
-		self.r2.toggled.connect(lambda:self.btnstate1(self.r2))
-		self.r3.toggled.connect(lambda:self.btnstate2(self.r3))
 		self.b0.clicked.connect(lambda:self.display_screen('0'))
 		self.b0.clicked.connect(lambda:self.storage('0',1))
 		self.b1.clicked.connect(lambda:self.display_screen('1'))
@@ -136,12 +93,6 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.cos1.clicked.connect(lambda:self.storage(' math.acos( ',1))
 		self.tan1.clicked.connect(lambda:self.display_screen(' arctan( '))
 		self.tan1.clicked.connect(lambda:self.storage(' math.atan( ',1))
-		self.squar.clicked.connect(lambda:self.display_screen(' ^2 '))
-		self.squar.clicked.connect(lambda:self.storage(' **2 ',1))
-		self.ln1.clicked.connect(lambda:self.display_screen(' e^( '))
-		self.ln1.clicked.connect(lambda:self.storage(' math.exp( ',1))
-		self.log1.clicked.connect(lambda:self.display_screen(' 10^ '))
-		self.log1.clicked.connect(lambda:self.storage(' 10** ',1))
 		self.power.clicked.connect(lambda:self.display_screen(' ^ '))
 		self.power.clicked.connect(lambda:self.storage(' ** ',1))
 		self.b_close.clicked.connect(lambda:self.display_screen(' ) '))
@@ -215,9 +166,9 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 			self.stack.append('#') #Done so as to pop once in order to remove the error message from disp and secondly to pop the wrong input
 			self.display_error("Math Error : Division by Zero")
 		except ValueError:
-			print("Math Error : No negatives in sqrt/log")
+			print("Math Error :No negatives in sqrt/log ,cos-1 & sin-1 b/w -1 & 1")
 			self.stack.append('#')
-			self.display_error("Math Error : No negatives in sqrt/log")
+			self.display_error("Math Error :No negatives in sqrt/log ,cos-1 & sin-1 b/w -1 & 1 ")
 		except SyntaxError:
 			print("Improper equation entered")
 			self.stack.append('#')

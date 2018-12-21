@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>386</width>
+    <width>435</width>
     <height>478</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>386</width>
+    <width>435</width>
     <height>478</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>386</width>
+    <width>435</width>
     <height>478</height>
    </size>
   </property>
@@ -350,8 +350,8 @@ QStackedWidget
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>410</y>
-     <width>41</width>
+     <y>290</y>
+     <width>61</width>
      <height>51</height>
     </rect>
    </property>
@@ -364,7 +364,7 @@ QStackedWidget
     <rect>
      <x>10</x>
      <y>20</y>
-     <width>371</width>
+     <width>421</width>
      <height>71</height>
     </rect>
    </property>
@@ -385,9 +385,9 @@ QStackedWidget
   <widget class="QPushButton" name="clear">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>290</y>
-     <width>41</width>
+     <x>290</x>
+     <y>230</y>
+     <width>81</width>
      <height>51</height>
     </rect>
    </property>
@@ -399,8 +399,8 @@ QStackedWidget
    <property name="geometry">
     <rect>
      <x>290</x>
-     <y>290</y>
-     <width>41</width>
+     <y>170</y>
+     <width>81</width>
      <height>51</height>
     </rect>
    </property>
@@ -437,9 +437,9 @@ QStackedWidget
   <widget class="QPushButton" name="divide">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>290</x>
      <y>290</y>
-     <width>61</width>
+     <width>81</width>
      <height>51</height>
     </rect>
    </property>
@@ -465,7 +465,7 @@ QStackedWidget
     <rect>
      <x>320</x>
      <y>350</y>
-     <width>61</width>
+     <width>51</width>
      <height>51</height>
     </rect>
    </property>
@@ -515,9 +515,9 @@ QStackedWidget
   <widget class="QPushButton" name="power">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>150</x>
      <y>410</y>
-     <width>61</width>
+     <width>71</width>
      <height>51</height>
     </rect>
    </property>
@@ -580,9 +580,9 @@ QStackedWidget
   <widget class="QPushButton" name="e">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>230</x>
      <y>410</y>
-     <width>61</width>
+     <width>71</width>
      <height>51</height>
     </rect>
    </property>
@@ -593,9 +593,9 @@ QStackedWidget
   <widget class="QPushButton" name="pi">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>310</x>
      <y>410</y>
-     <width>41</width>
+     <width>61</width>
      <height>51</height>
     </rect>
    </property>
@@ -606,7 +606,7 @@ QStackedWidget
   <widget class="QPushButton" name="bco">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>190</x>
      <y>350</y>
      <width>181</width>
      <height>51</height>
@@ -621,7 +621,7 @@ QStackedWidget
     <rect>
      <x>10</x>
      <y>350</y>
-     <width>181</width>
+     <width>171</width>
      <height>51</height>
     </rect>
    </property>
@@ -633,7 +633,7 @@ QStackedWidget
    <property name="geometry">
     <rect>
      <x>290</x>
-     <y>230</y>
+     <y>110</y>
      <width>91</width>
      <height>51</height>
     </rect>
@@ -645,10 +645,10 @@ QStackedWidget
   <widget class="QPushButton" name="sin1">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>350</y>
+     <x>380</x>
+     <y>110</y>
      <width>51</width>
-     <height>51</height>
+     <height>111</height>
     </rect>
    </property>
    <property name="text">
@@ -658,92 +658,27 @@ QStackedWidget
   <widget class="QPushButton" name="cos1">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>350</y>
+     <x>380</x>
+     <y>230</y>
      <width>51</width>
-     <height>51</height>
+     <height>111</height>
     </rect>
    </property>
    <property name="text">
     <string>cos-1</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="ln1">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>350</y>
-     <width>51</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>e^x</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="log1">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>350</y>
-     <width>61</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>10^x</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="squar">
-   <property name="geometry">
-    <rect>
-     <x>320</x>
-     <y>350</y>
-     <width>61</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>x^2</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="tan1">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>380</x>
      <y>350</y>
      <width>51</width>
-     <height>51</height>
+     <height>111</height>
     </rect>
    </property>
    <property name="text">
     <string>tan-1</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="r2">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>170</y>
-     <width>91</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Inverse</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="r3">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>110</y>
-     <width>91</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Normal</string>
    </property>
   </widget>
   <zorder>arg</zorder>
@@ -782,12 +717,7 @@ QStackedWidget
   <zorder>bco</zorder>
   <zorder>sin1</zorder>
   <zorder>cos1</zorder>
-  <zorder>ln1</zorder>
-  <zorder>log1</zorder>
-  <zorder>squar</zorder>
   <zorder>tan1</zorder>
-  <zorder>r2</zorder>
-  <zorder>r3</zorder>
  </widget>
  <resources/>
  <connections/>
