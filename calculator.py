@@ -25,9 +25,9 @@ except AttributeError:
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
-        Dialog.resize(386, 478)
-        Dialog.setMinimumSize(QtCore.QSize(386, 478))
-        Dialog.setMaximumSize(QtCore.QSize(386, 478))
+        Dialog.resize(386, 538)
+        Dialog.setMinimumSize(QtCore.QSize(386, 538))
+        Dialog.setMaximumSize(QtCore.QSize(386, 538))
         Dialog.setStyleSheet(_fromUtf8("\n"
 "QToolTip\n"
 "{\n"
@@ -306,6 +306,18 @@ class Ui_Dialog(object):
         self.r1 = QtGui.QRadioButton(Dialog)
         self.r1.setGeometry(QtCore.QRect(290, 110, 91, 51))
         self.r1.setObjectName(_fromUtf8("r1"))
+	self.graph = QtGui.QPushButton(Dialog)
+        self.graph.setGeometry(QtCore.QRect(10, 470, 61, 51))
+        self.graph.setObjectName(_fromUtf8("graph"))
+	self.plot = QtGui.QPushButton(Dialog)
+        self.plot.setGeometry(QtCore.QRect(80, 470, 122, 51))
+        self.plot.setObjectName(_fromUtf8("plot"))
+	self.x = QtGui.QPushButton(Dialog)
+        self.x.setGeometry(QtCore.QRect(220, 470, 61, 51))
+        self.x.setObjectName(_fromUtf8("x"))
+	self.comma = QtGui.QPushButton(Dialog)
+        self.comma.setGeometry(QtCore.QRect(290, 470, 91, 51))
+        self.comma.setObjectName(_fromUtf8("comma"))
         self.arg.raise_()
         self.b1.raise_()
         self.b3.raise_()
@@ -379,4 +391,7 @@ class Ui_Dialog(object):
         self.bco.setText(_translate("Dialog", "j", None))
         self.arg.setText(_translate("Dialog", "Arg", None))
         self.r1.setText(_translate("Dialog", "Complex", None))
-
+	self.graph.setText(_translate("Dialog", "graph", None))
+	self.x.setText(_translate("Dialog", "x", None))
+	self.comma.setText(_translate("Dialog", ",", None))
+	self.plot.setText(_translate("Dialog", "plot", None))
