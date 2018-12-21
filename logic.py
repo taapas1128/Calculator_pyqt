@@ -4,7 +4,59 @@ from PyQt4 import QtGui
 import calculator
 import math
 import cmath
-prev= ""
+import numpy as np
+import pyqtgraph as pg
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
+
+class Graph(QtGui.QMainWindow): #Auxiliary class to display pop-up for inputting range
+    def __init__(self,parent = None):
+        super(Graph, self).__init__(parent)
+	page = QWidget()
+	page.setMinimumSize(QSize(350, 320))
+	page.setWindowTitle("Enter range")
+	page.start = QLabel(page)
+        page.start.setText('Start:')
+        page.end = QLabel(page)
+        page.end.setText('End:') 
+        page.step = QLabel(page)
+        page.step.setText('Step size:')              
+	self.button = QPushButton('Plot', page)
+	self.edit1 = QLineEdit()
+	self.edit2 = QLineEdit()
+	self.edit3 = QLineEdit()
+	self.edit1.move(80,20)
+	page.start.move(20,15)
+	self.edit1.move(80,80)
+	page.end.move(20,85)
+	self.edit1.move(80,140)
+	page.step.move(20,145)
+	vbox1 = QVBoxLayout()	
+	vbox1.addWidget(self.edit1)
+	vbox1.addWidget(self.edit2)
+	vbox1.addWidget(self.edit3)
+	vbox1.addWidget(self.button)
+	page.setLayout(vbox1)
+	self.setCentralWidget(page)
+	self.connect(self.button, SIGNAL("clicked()"), self.clicked)
+
+    def clicked(self):
+	l = float(self.edit1.text())
+	r = float(self.edit2.text())
+	s = float(self.edit3.text())
+	x = np.arange(l,r,s)
+	print(x)
+	s = calculator_class.var
+	print("In Second")
+	print(s)
+	y = eval(s)
+	pg.setConfigOption('background', 'w')      # sets background white                                                 
+    	pg.setConfigOption('foreground', 'k')      # sets axis color to black
+	pw = pg.plot(x,y,pen = 'k')
+	pw.setTitle('y = f(x)')
+   	pw.setLabel('bottom', 'x -->')           	# x-label
+    	pw.setLabel('left', 'y = f(x) -->')             # y-label
+    	
 class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 	def btnstate(self,r1):
 		if r1.isChecked() == True:
@@ -70,25 +122,25 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.divide.clicked.connect(lambda:self.display_screen(' / '))
 		self.divide.clicked.connect(lambda:self.storage(' / ',1))
 		self.log.clicked.connect(lambda:self.display_screen(' log( '))
-		self.log.clicked.connect(lambda:self.storage(' math.log10(',1))
+		self.log.clicked.connect(lambda:self.storage(' np.log10(',1))
 		self.ln.clicked.connect(lambda:self.display_screen(' ln( '))
-		self.ln.clicked.connect(lambda:self.storage(' (math.log10(math.e))**(-1) * math.log10( ',1))
+		self.ln.clicked.connect(lambda:self.storage(' (np.log10(math.e))**(-1) * np.log10( ',1))
 		self.pi.clicked.connect(lambda:self.display_screen('pi'))
-		self.pi.clicked.connect(lambda:self.storage('math.pi',1))
+		self.pi.clicked.connect(lambda:self.storage('np.pi',1))
 		self.e.clicked.connect(lambda:self.display_screen('e'))
-		self.e.clicked.connect(lambda:self.storage('math.e',1))
+		self.e.clicked.connect(lambda:self.storage('np.e',1))
 		self.arg.clicked.connect(lambda:self.display_screen('Arg('))
-		self.arg.clicked.connect(lambda:self.storage('(180/(math.pi))*cmath.phase(',1))
+		self.arg.clicked.connect(lambda:self.storage('(180/(np.pi))*cmath.phase(',1))
 		self.b_open.clicked.connect(lambda:self.display_screen(' ( '))
 		self.b_open.clicked.connect(lambda:self.storage(' ( ',1))
 		self.sin.clicked.connect(lambda:self.display_screen(' sin( '))
-		self.sin.clicked.connect(lambda:self.storage('math.sin( ',1))
+		self.sin.clicked.connect(lambda:self.storage(' np.sin( ',1))
 		self.cos.clicked.connect(lambda:self.display_screen(' cos( '))
-		self.cos.clicked.connect(lambda:self.storage(' math.cos( ',1))
+		self.cos.clicked.connect(lambda:self.storage(' np.cos( ',1))
 		self.tan.clicked.connect(lambda:self.display_screen(' tan( '))
-		self.tan.clicked.connect(lambda:self.storage(' math.tan( ',1))
+		self.tan.clicked.connect(lambda:self.storage(' np.tan( ',1))
 		self.sq_root.clicked.connect(lambda:self.display_screen(' sqrt( '))
-		self.sq_root.clicked.connect(lambda:self.storage(' math.sqrt( ',1))
+		self.sq_root.clicked.connect(lambda:self.storage(' np.sqrt( ',1))
 		self.power.clicked.connect(lambda:self.display_screen(' ^ '))
 		self.power.clicked.connect(lambda:self.storage(' ** ',1))
 		self.b_close.clicked.connect(lambda:self.display_screen(' ) '))
@@ -99,14 +151,36 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.back.clicked.connect(lambda:self.display_screen2(self.prev_disp))
 		self.back.clicked.connect(lambda:self.storage1(self.store))
 		self.equal.clicked.connect(self.calculation)
+		self.graph.clicked.connect(self.graphing)
+		self.x.clicked.connect(lambda:self.display_screen(' x '))
+		self.x.clicked.connect(lambda:self.storage(' x ',1))
+		self.plot.clicked.connect(self.plott)	
 		self.display.setReadOnly(True)
-
+	var = ""
 	store= ""
 	prev_disp = ""
 	stack = []
 	stack_disp = []
 	temp = []
-
+	def graphing(self):
+		self.flag = 1		
+		print("Welcome to graphs")
+		print("Enter the equation f(x) : ")
+		self.display.setText("Enter the equation f(x) : ")
+		self.store = ""		
+    	def plott(self):
+    		print(self.store) 
+    		x = np.arange(1,2,0.1) #Just to check if equation enter for plotting is syntactically correct or not
+    		try:
+    			y = eval(self.store)
+    		except SyntaxError:
+    			print("Improper Equation entered")
+    			self.display.setText("Improper Equation entered")
+    		else:
+    			calculator_class.var = self.store
+			self.dialog = Graph(self)	#Calling the Graph class to display a Range requesting pop-up
+			self.dialog.setWindowTitle('Please Enter Range of y = f(x)')
+			self.dialog.show()
 
 	def storage1(self,value):
 		try:
@@ -121,6 +195,8 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		if k is 1 :
 			self.store=self.store + value
 		elif k is 3:
+			self.stack=[]
+			self.stack_disp=[]
 			self.store=""
 		print (self.store)
 		self.stack.append(value)
@@ -139,9 +215,15 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		except IndexError:
 			self.display_screen1("")
 		else:
-			self.temp = self.stack_disp
-			value = ''.join(self.temp)
-			self.display.setText(value)
+			if(self.flag == 1):
+				self.display.setText("Enter the equation f(x) : ")
+				self.temp = self.stack_disp
+				value = ''.join(self.temp)		
+				self.display.insert(value)
+			else:
+				self.temp = self.stack_disp
+				value = ''.join(self.temp)
+				self.display.setText(value)
 
 	def display_error(self,value):
 		self.display.setText(value)
@@ -179,6 +261,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 			self.stack.append(final_value)
 			print(self.store)
 			self.disp_res(" = " + final_value)
+			
 
 
 
