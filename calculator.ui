@@ -676,7 +676,7 @@ QStackedWidget
     <rect>
      <x>220</x>
      <y>470</y>
-     <width>61</width>
+     <width>160</width>
      <height>51</height>
     </rect>
    </property>
@@ -684,20 +684,7 @@ QStackedWidget
     <string>x</string>
    </property>
   </widget>
-	
-  <widget class="QPushButton" name="comma">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>470</y>
-     <width>91</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>,</string>
-   </property>
-  </widget>		
+		
   <zorder>arg</zorder>
   <zorder>b1</zorder>
   <zorder>b3</zorder>
