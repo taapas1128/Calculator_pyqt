@@ -6,21 +6,9 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>386</width>
-    <height>538</height>
+    <width>435</width>
+    <height>539</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>435</width>
-    <height>478</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>435</width>
-    <height>478</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Calculator</string>
@@ -642,8 +630,7 @@ QStackedWidget
     <string>Complex</string>
    </property>
   </widget>
-
-    <widget class="QPushButton" name="graph">
+  <widget class="QPushButton" name="graph">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -656,7 +643,6 @@ QStackedWidget
     <string>graph</string>
    </property>
   </widget>
-
   <widget class="QPushButton" name="plot">
    <property name="geometry">
     <rect>
@@ -670,11 +656,10 @@ QStackedWidget
     <string>plot</string>
    </property>
   </widget>
-
   <widget class="QPushButton" name="x">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>210</x>
      <y>470</y>
      <width>160</width>
      <height>51</height>
@@ -684,7 +669,48 @@ QStackedWidget
     <string>x</string>
    </property>
   </widget>
-
+  <widget class="QPushButton" name="cos1">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>240</y>
+     <width>51</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>cos-1</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sin1">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>110</y>
+     <width>51</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>sin-1</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="tan1">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>380</y>
+     <width>51</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>tan-1</string>
+   </property>
+  </widget>
+  <zorder>graph</zorder>
+  <zorder>plot</zorder>
+  <zorder>x</zorder>
   <zorder>arg</zorder>
   <zorder>b1</zorder>
   <zorder>b3</zorder>
@@ -719,8 +745,8 @@ QStackedWidget
   <zorder>pi</zorder>
   <zorder>r1</zorder>
   <zorder>bco</zorder>
-  <zorder>sin1</zorder>
   <zorder>cos1</zorder>
+  <zorder>sin1</zorder>
   <zorder>tan1</zorder>
  </widget>
  <resources/>

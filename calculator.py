@@ -25,9 +25,7 @@ except AttributeError:
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
-        Dialog.resize(386, 538)
-        Dialog.setMinimumSize(QtCore.QSize(435, 478))
-        Dialog.setMaximumSize(QtCore.QSize(435, 478))
+        Dialog.resize(435, 539)
         Dialog.setStyleSheet(_fromUtf8("\n"
 "QToolTip\n"
 "{\n"
@@ -313,8 +311,20 @@ class Ui_Dialog(object):
         self.plot.setGeometry(QtCore.QRect(80, 470, 122, 51))
         self.plot.setObjectName(_fromUtf8("plot"))
         self.x = QtGui.QPushButton(Dialog)
-        self.x.setGeometry(QtCore.QRect(220, 470, 160, 51))
+        self.x.setGeometry(QtCore.QRect(210, 470, 160, 51))
         self.x.setObjectName(_fromUtf8("x"))
+        self.cos1 = QtGui.QPushButton(Dialog)
+        self.cos1.setGeometry(QtCore.QRect(380, 240, 51, 131))
+        self.cos1.setObjectName(_fromUtf8("cos1"))
+        self.sin1 = QtGui.QPushButton(Dialog)
+        self.sin1.setGeometry(QtCore.QRect(380, 110, 51, 121))
+        self.sin1.setObjectName(_fromUtf8("sin1"))
+        self.tan1 = QtGui.QPushButton(Dialog)
+        self.tan1.setGeometry(QtCore.QRect(380, 380, 51, 141))
+        self.tan1.setObjectName(_fromUtf8("tan1"))
+        self.graph.raise_()
+        self.plot.raise_()
+        self.x.raise_()
         self.arg.raise_()
         self.b1.raise_()
         self.b3.raise_()
@@ -349,6 +359,9 @@ class Ui_Dialog(object):
         self.pi.raise_()
         self.r1.raise_()
         self.bco.raise_()
+        self.cos1.raise_()
+        self.sin1.raise_()
+        self.tan1.raise_()
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -391,4 +404,7 @@ class Ui_Dialog(object):
         self.graph.setText(_translate("Dialog", "graph", None))
         self.plot.setText(_translate("Dialog", "plot", None))
         self.x.setText(_translate("Dialog", "x", None))
+        self.cos1.setText(_translate("Dialog", "cos-1", None))
+        self.sin1.setText(_translate("Dialog", "sin-1", None))
+        self.tan1.setText(_translate("Dialog", "tan-1", None))
 

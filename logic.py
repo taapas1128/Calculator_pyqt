@@ -8,6 +8,7 @@ import numpy as np
 import pyqtgraph as pg
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
+prev= ""
 
 class Graph(QtGui.QMainWindow): #Auxiliary class to display pop-up for inputting range
     def __init__(self,parent = None):
