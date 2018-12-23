@@ -89,7 +89,8 @@ This is a basic PyQt based scientific calculator.
   ![calculator](cal.png)
   ![calculator](cmplx_calc.png)
   ![calculator](graph_1.png)
-  ![calculator](graph_2.png)	
+  ![calculator](graph_3.png)
+  ![calculator](graph_2.png)
 ## Support:
 
 For any queries, please raise an issue or contact github@taapas1128.
