@@ -78,10 +78,19 @@ This is a basic PyQt based scientific calculator.
 
 * You can also go through these set of videos for understanding the framework and functioning of qt designer. Click [here](https://www.youtube.com/watch?v=iDJlGV8Rvgg).
 
-* Here is the Layout of our scientific calculator!
-  
-  ![calculator](calc.jpg)
+* Using the complex mode :
+  There is a button labelled "complex" in the upper right corner of the calculator. Press it to enter the complex mode. Here   you can perform operations on complex numbers. Imaginary numbers are represented in A + Bj format. If the complex part of     your number, B is 1, you have to write the number as A + 1j. After giving a proper input you can perform all operations       such as addition, subtraction, multiplication, division and exponents. You can also find argument of the complex number       by pressing the "Arg" button. You can switch back to normal mode by pressing the "complex" button again.
 
+* Using the graph mode :
+  The button labelled 'graph' serves the purpose of plotting simple graphs. Pressing it will display a message on the Calculator display screen askng you to enter the equation y = f(x). Please enter the equation in terms of variable 'x' with a button for it located on the lower-right side of the calculator window. After writing in the equation (taking care of parenthesis wherever required), press the 'plot' button next to the graph button. Pressing this will display a pop-up asking you to enter the range of values(start index and end index) over which the graph has to be plotted (For ex. 0 to 2*pi for sin(x). Note : Please enter pi as 3.14), and the step size. A lower step-size (For ex. 0.01 or 0.1) ensures a smoother graph which more closely resembles the desired output. After filling the above 3 text-boxes, in order to display the graph, press Plot on the dialog box.
+  
+* Here is the Layout of our scientific calculator! 
+
+  ![calculator](cal.png)
+  ![calculator](cmplx_calc.png)
+  ![calculator](graph_1.png)
+  ![calculator](graph_3.png)
+  ![calculator](graph_2.png)
 ## Support:
 
 For any queries, please raise an issue or contact github@taapas1128.
