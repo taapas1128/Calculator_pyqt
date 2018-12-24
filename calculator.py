@@ -26,6 +26,8 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(435, 539)
+        Dialog.setMinimumSize(QtCore.QSize(435, 539))
+        Dialog.setMaximumSize(QtCore.QSize(435, 539))
         Dialog.setStyleSheet(_fromUtf8("\n"
 "QToolTip\n"
 "{\n"

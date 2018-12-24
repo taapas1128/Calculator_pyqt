@@ -10,6 +10,18 @@
     <height>539</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>435</width>
+    <height>539</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>435</width>
+    <height>539</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Calculator</string>
   </property>
