@@ -120,7 +120,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.b9.clicked.connect(lambda:self.display_screen('9'))
 		self.b9.clicked.connect(lambda:self.storage('9',1))
 		self.bco.clicked.connect(lambda:self.display_screen('j'))
-		self.bco.clicked.connect(lambda:self.storage('j',1))
+		self.bco.clicked.connect(lambda:self.storage('1j',1))
 		self.decimal.clicked.connect(lambda:self.display_screen('.'))
 		self.decimal.clicked.connect(lambda:self.storage('.',1))
 		self.com.clicked.connect(lambda:self.display_screen(','))
@@ -182,13 +182,14 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.x.clicked.connect(lambda:self.storage(' x ',1))
 		self.plot.clicked.connect(self.plott)
 		self.display.setReadOnly(True)
-        
+
 	var = ""
 	store= ""
 	prev_disp = ""
 	stack = []
 	stack_disp = []
 	temp = []
+	flag = 0
 	def graphing(self):
 		self.flag = 1
 		print("Welcome to graphs")
@@ -222,6 +223,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		if k is 1 :
 			self.store=self.store + value
 		elif k is 3:
+			self.flag = 0
 			self.stack=[]
 			self.stack_disp=[]
 			self.store=""
@@ -241,6 +243,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 			self.stack_disp.pop()
 		except IndexError:
 			self.display_screen1("")
+			self.flag = 0
 		else:
 			if(self.flag == 1):
 				self.display.setText("Enter the equation f(x) : ")
@@ -265,6 +268,18 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		screen_value=str(screen_value)
 		print(''.join(self.stack))
 		try:
+			i = 0
+			while i < len(screen_value):
+				i = screen_value.find("1j",i)
+				if i == -1:
+					print("Nothing complex")
+					break
+				elif(i == 0 or screen_value[i-1] < '0' or screen_value[i-1] > '9'):
+					print("Okay only 1j")
+				else:
+					if(i):
+						screen_value = screen_value[:i] + screen_value[i+1:]
+				i += 2
 			final_value=eval(screen_value)
 		except ZeroDivisionError:
 			print("Math Error : Division by Zero")
