@@ -9,7 +9,18 @@ import pyqtgraph as pg
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
-
+def ncr(n,r):
+    if(n>=r):
+        f = math.factorial
+        return f(n) / f(r) / f(n-r)
+    else:
+        return 0.0
+def npr(n,r):
+    if(n>=r):
+        f = math.factorial
+        return f(n) / f(n-r)
+    else:
+        return 0.0
 class Graph(QtGui.QMainWindow): #Auxiliary class to display pop-up for inputting range
     def __init__(self,parent = None):
         super(Graph, self).__init__(parent)
@@ -110,6 +121,8 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.bco.clicked.connect(lambda:self.storage('1j',1))
 		self.decimal.clicked.connect(lambda:self.display_screen('.'))
 		self.decimal.clicked.connect(lambda:self.storage('.',1))
+		self.com.clicked.connect(lambda:self.display_screen(','))
+		self.com.clicked.connect(lambda:self.storage(',',1))
 		self.add.clicked.connect(lambda:self.display_screen(' + '))
 		self.add.clicked.connect(lambda:self.storage(' + ',1))
 		self.substract.clicked.connect(lambda:self.display_screen(' - '))
@@ -146,6 +159,12 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		self.cos1.clicked.connect(lambda:self.storage(' math.acos( ',1))
 		self.tan1.clicked.connect(lambda:self.display_screen(' arctan( '))
 		self.tan1.clicked.connect(lambda:self.storage(' math.atan( ',1))
+		self.comb.clicked.connect(lambda:self.display_screen(' nCr( '))
+		self.comb.clicked.connect(lambda:self.storage(' ncr( ',1))
+		self.perm.clicked.connect(lambda:self.display_screen(' nPr( '))
+		self.perm.clicked.connect(lambda:self.storage(' npr( ',1))
+		self.fact.clicked.connect(lambda:self.display_screen(' Factorial( '))
+		self.fact.clicked.connect(lambda:self.storage(' math.factorial( ',1))
 		self.power.clicked.connect(lambda:self.display_screen(' ^ '))
 		self.power.clicked.connect(lambda:self.storage(' ** ',1))
 		self.b_close.clicked.connect(lambda:self.display_screen(' ) '))
@@ -247,7 +266,7 @@ class calculator_class(calculator.Ui_Dialog,QtGui.QMainWindow):
 		print(''.join(self.stack))
 		try:
 			i = 0
-			while i < len(screen_value):							
+			while i < len(screen_value):
 				i = screen_value.find("1j",i)
 				if i == -1:
 					print("Nothing complex")
