@@ -53,7 +53,9 @@ class matrix_class(matrix.Ui_Matwin,QtGui.QMainWindow):
 		v = self.ds2.text()
 		c=0
 		for i in self.ar1:
-			v=v.replace(i,'self.arr2['+str(c)+']')
+			v=v.replace(i,i+'#')
+		for i in self.ar1:
+			v=v.replace(i+'#','self.arr2['+str(c)+']')
 			c=c+1
 		p=eval(v)
 		self.st = self.st + str(p) + '\n'
