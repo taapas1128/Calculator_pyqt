@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
-
+from equation import Ui_Form
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -23,6 +23,11 @@ except AttributeError:
         return QtGui.QApplication.translate(context, text, disambig)
 
 class Ui_Dialog(object):
+    def openWindow(self):
+        self.window = QtGui.QMainWindow()
+        self.ui = Ui_Form()
+        self.ui.setupUi(self.window)
+        self.window.show()
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
         Dialog.resize(440, 539)
@@ -310,10 +315,10 @@ class Ui_Dialog(object):
         self.graph.setGeometry(QtCore.QRect(10, 470, 61, 51))
         self.graph.setObjectName(_fromUtf8("graph"))
         self.plot = QtGui.QPushButton(Dialog)
-        self.plot.setGeometry(QtCore.QRect(80, 470, 122, 51))
+        self.plot.setGeometry(QtCore.QRect(80, 470, 81, 51))
         self.plot.setObjectName(_fromUtf8("plot"))
         self.x = QtGui.QPushButton(Dialog)
-        self.x.setGeometry(QtCore.QRect(210, 470, 161, 51))
+        self.x.setGeometry(QtCore.QRect(170, 470, 61, 51))
         self.x.setObjectName(_fromUtf8("x"))
         self.cos1 = QtGui.QPushButton(Dialog)
         self.cos1.setGeometry(QtCore.QRect(380, 170, 51, 51))
@@ -336,6 +341,10 @@ class Ui_Dialog(object):
         self.com = QtGui.QPushButton(Dialog)
         self.com.setGeometry(QtCore.QRect(380, 470, 51, 51))
         self.com.setObjectName(_fromUtf8("com"))
+        self.equ = QtGui.QPushButton(Dialog)
+        self.equ.setGeometry(QtCore.QRect(240, 470, 131, 51))
+        self.equ.setObjectName(_fromUtf8("equ"))
+        self.equ.clicked.connect(self.openWindow)
         self.graph.raise_()
         self.plot.raise_()
         self.x.raise_()
@@ -380,6 +389,7 @@ class Ui_Dialog(object):
         self.comb.raise_()
         self.perm.raise_()
         self.com.raise_()
+        self.equ.raise_()
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -429,4 +439,4 @@ class Ui_Dialog(object):
         self.comb.setText(_translate("Dialog", "nCr", None))
         self.perm.setText(_translate("Dialog", "nPr", None))
         self.com.setText(_translate("Dialog", ",", None))
-
+        self.equ.setText(_translate("Dialog", "Equation", None))
