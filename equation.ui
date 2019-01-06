@@ -283,8 +283,14 @@ QStackedWidget
      <height>41</height>
     </rect>
    </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QLineEdit" name="ansx">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -292,6 +298,9 @@ QStackedWidget
      <width>271</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
