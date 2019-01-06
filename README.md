@@ -85,7 +85,10 @@ This is a basic PyQt based scientific calculator.
   The button labelled 'graph' serves the purpose of plotting simple graphs. Pressing it will display a message on the Calculator display screen askng you to enter the equation y = f(x). Please enter the equation in terms of variable 'x' with a button for it located on the lower-right side of the calculator window. After writing in the equation (taking care of parenthesis wherever required), press the 'plot' button next to the graph button. Pressing this will display a pop-up asking you to enter the range of values(start index and end index) over which the graph has to be plotted (For ex. 0 to 2*pi for sin(x). Note : Please enter pi as 3.14), and the step size. A lower step-size (For ex. 0.01 or 0.1) ensures a smoother graph which more closely resembles the desired output. After filling the above 3 text-boxes, in order to display the graph, press Plot on the dialog box.
 
 * Using nCr , nPr and x! buttons :
-  Pressing "x!" button will display "factorial(" , for finding factorial of a number "n", syntax is factorial(n). Pressing "nCr" button will display "nCr(" , for finding it the syntax is nCr(n,r). Pressing "nPr" button will display "nPr(" , for finding it the syntax is nPr(n,r). WHERE n and r are standard mathematical notations and have their usual meanings. "," button is available in the lower right corner of the calculator. 
+  Pressing "x!" button will display "factorial(" , for finding factorial of a number "n", syntax is factorial(n). Pressing "nCr" button will display "nCr(" , for finding it the syntax is nCr(n,r). Pressing "nPr" button will display "nPr(" , for finding it the syntax is nPr(n,r). WHERE n and r are standard mathematical notations and have their usual meanings. "," button is available in the lower right corner of the calculator.
+
+* Using the Equation Button:
+  Press the "Equation" button in the lower right corner of the calculator and you will get a pop-up window , just fill the details to get the roots of the quadratic equation.
   
 * Here is the Layout of our scientific calculator! 
 
