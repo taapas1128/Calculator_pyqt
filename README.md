@@ -87,8 +87,8 @@ This is a basic PyQt based scientific calculator.
 * Using nCr , nPr and x! buttons :
   Pressing "x!" button will display "factorial(" , for finding factorial of a number "n", syntax is factorial(n). Pressing "nCr" button will display "nCr(" , for finding it the syntax is nCr(n,r). Pressing "nPr" button will display "nPr(" , for finding it the syntax is nPr(n,r). WHERE n and r are standard mathematical notations and have their usual meanings. "," button is available in the lower right corner of the calculator.
 
-* Using the Equation Button:
-  Press the "Equation" button in the lower right corner of the calculator and you will get a pop-up window , just fill the details to get the roots of the quadratic equation.
+* Using the Equation Button :
+  Press the "Equation" button in the lower right corner of the calculator and you will be guided to menu window where you have to choose which type of equation you want to solve. For solving linear equation in two variables click on "Solve Linear Equation in two Variable" button and you will get a new pop-up window, fill in the details to get x and y. For Solving Quadratic equation click on "Solve Quadratic equation" button and you will get a new pop-up window , fill in the details to get two roots of the equation.
   
 * Here is the Layout of our scientific calculator! 
 

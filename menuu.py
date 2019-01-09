@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'equation.ui'
+# Form implementation generated from reading ui file 'menuu.ui'
 #
 # Created by: PyQt4 UI code generator 4.12.1
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
-import cmath
-
+from equation import Ui_Form
+from linequ import Ui_LinEquation
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -23,24 +23,21 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_Form(object):
-    def solve(self):
-    	a = float(self.edit1.text())
-    	b = float(self.edit2.text())
-    	c = float(self.edit3.text())
-        d = (b**2) - (4*a*c)
-        root1 = (-b - cmath.sqrt(d)) / (2 * a)
-        root2 = (-b + cmath.sqrt(d)) / (2 * a)
-        print(root1)
-        print(root2)
-        root1=str(root1)
-        root2=str(root2)
-        self.ansx.setText(root1)
-        self.ansy.setText(root2)
-    def setupUi(self, Form):
-        Form.setObjectName(_fromUtf8("Form"))
-        Form.resize(369, 270)
-        Form.setStyleSheet(_fromUtf8("\n"
+class Ui_Menu(object):
+    def openWindow(self):
+        self.window = QtGui.QMainWindow()
+        self.ui = Ui_Form()
+        self.ui.setupUi(self.window)
+        self.window.show()
+    def openWindowl(self):
+        self.window = QtGui.QMainWindow()
+        self.ui = Ui_LinEquation()
+        self.ui.setupUi(self.window)
+        self.window.show()
+    def setupUi(self, Menu):
+        Menu.setObjectName(_fromUtf8("Menu"))
+        Menu.resize(306, 179)
+        Menu.setStyleSheet(_fromUtf8("\n"
 "QToolTip\n"
 "{\n"
 "     border: 1px solid black;\n"
@@ -215,60 +212,31 @@ class Ui_Form(object):
 "QStackedWidget\n"
 "{\n"
 "    border: 1px transparent black;\n"
-"}"))
-        self.edit1 = QtGui.QLineEdit(Form)
-        self.edit1.setGeometry(QtCore.QRect(180, 80, 51, 41))
-        self.edit1.setObjectName(_fromUtf8("edit1"))
-        self.edit2 = QtGui.QLineEdit(Form)
-        self.edit2.setGeometry(QtCore.QRect(240, 80, 61, 41))
-        self.edit2.setObjectName(_fromUtf8("edit2"))
-        self.edit3 = QtGui.QLineEdit(Form)
-        self.edit3.setGeometry(QtCore.QRect(310, 80, 51, 41))
-        self.edit3.setObjectName(_fromUtf8("edit3"))
-        self.label = QtGui.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(70, 40, 241, 31))
-        self.label.setObjectName(_fromUtf8("label"))
-        self.label1 = QtGui.QLabel(Form)
-        self.label1.setGeometry(QtCore.QRect(10, 80, 161, 31))
-        self.label1.setObjectName(_fromUtf8("label1"))
-        self.label3 = QtGui.QLabel(Form)
-        self.label3.setGeometry(QtCore.QRect(30, 170, 51, 31))
-        self.label3.setObjectName(_fromUtf8("label3"))
-        self.label4 = QtGui.QLabel(Form)
-        self.label4.setGeometry(QtCore.QRect(30, 220, 61, 31))
-        self.label4.setObjectName(_fromUtf8("label4"))
-        self.ansy = QtGui.QLineEdit(Form)
-        self.ansy.setGeometry(QtCore.QRect(90, 220, 271, 41))
-        self.ansy.setReadOnly(True)
-        self.ansy.setObjectName(_fromUtf8("ansy"))
-        self.ansx = QtGui.QLineEdit(Form)
-        self.ansx.setEnabled(True)
-        self.ansx.setGeometry(QtCore.QRect(90, 170, 271, 41))
-        self.ansx.setReadOnly(True)
-        self.ansx.setObjectName(_fromUtf8("ansx"))
-        self.pushButton = QtGui.QPushButton(Form)
-        self.pushButton.setGeometry(QtCore.QRect(150, 130, 97, 27))
-        self.pushButton.setObjectName(_fromUtf8("pushButton"))
-        self.pushButton.clicked.connect(self.solve)
-        self.label_2 = QtGui.QLabel(Form)
-        self.label_2.setGeometry(QtCore.QRect(60, 0, 261, 31))
+"}\n"
+""))
+        self.label = QtGui.QLabel(Menu)
+        self.label.setGeometry(QtCore.QRect(80, 0, 151, 31))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Century Schoolbook L"))
-        font.setPointSize(13)
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.label_2.setFont(font)
-        self.label_2.setObjectName(_fromUtf8("label_2"))
+        self.label.setFont(font)
+        self.label.setObjectName(_fromUtf8("label"))
+        self.linequ = QtGui.QPushButton(Menu)
+        self.linequ.setGeometry(QtCore.QRect(10, 50, 281, 51))
+        self.linequ.setObjectName(_fromUtf8("linequ"))
+        self.quadequ = QtGui.QPushButton(Menu)
+        self.quadequ.setGeometry(QtCore.QRect(10, 110, 281, 51))
+        self.quadequ.setObjectName(_fromUtf8("quadequ"))
+        self.linequ.clicked.connect(self.openWindowl)
+        self.quadequ.clicked.connect(self.openWindow)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(Menu)
+        QtCore.QMetaObject.connectSlotsByName(Menu)
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(_translate("Form", "Form", None))
-        self.label.setText(_translate("Form", "Equation is of the form ax^2+bx+c", None))
-        self.label1.setText(_translate("Form", "Enter a , b and c \n"
-" respectively", None))
-        self.label3.setText(_translate("Form", "Root1=", None))
-        self.label4.setText(_translate("Form", "Root2=", None))
-        self.pushButton.setText(_translate("Form", "Calculate", None))
-        self.label_2.setText(_translate("Form", "Solving Quadratic equation", None))
+    def retranslateUi(self, Menu):
+        Menu.setWindowTitle(_translate("Menu", "Form", None))
+        self.label.setText(_translate("Menu", "Equation Menu", None))
+        self.linequ.setText(_translate("Menu", "Solve Linear Equation in two Variable", None))
+        self.quadequ.setText(_translate("Menu", "Solve Quadratic equation", None))

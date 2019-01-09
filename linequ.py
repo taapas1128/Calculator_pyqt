@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'equation.ui'
+# Form implementation generated from reading ui file 'linequ.ui'
 #
 # Created by: PyQt4 UI code generator 4.12.1
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
-import cmath
+import numpy as np
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -23,24 +23,27 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_Form(object):
+class Ui_LinEquation(object):
     def solve(self):
-    	a = float(self.edit1.text())
-    	b = float(self.edit2.text())
-    	c = float(self.edit3.text())
-        d = (b**2) - (4*a*c)
-        root1 = (-b - cmath.sqrt(d)) / (2 * a)
-        root2 = (-b + cmath.sqrt(d)) / (2 * a)
-        print(root1)
-        print(root2)
-        root1=str(root1)
-        root2=str(root2)
-        self.ansx.setText(root1)
-        self.ansy.setText(root2)
-    def setupUi(self, Form):
-        Form.setObjectName(_fromUtf8("Form"))
-        Form.resize(369, 270)
-        Form.setStyleSheet(_fromUtf8("\n"
+    	a11 = float(self.a1.text())
+    	b11 = float(self.b1.text())
+    	c11 = float(self.c1.text())
+    	a22 = float(self.a2.text())
+    	b22 = float(self.b2.text())
+    	c22 = float(self.c2.text())
+        a = np.array([[a11, b11],[a22,b22]])
+        b = np.array([c11, c22])
+        [x,y]=np.linalg.solve(a,b)
+        print(x)
+        print(y)
+        x=str(x)
+        y=str(y)
+        self.ansx.setText(x)
+        self.ansy.setText(y)
+    def setupUi(self, LinEquation):
+        LinEquation.setObjectName(_fromUtf8("LinEquation"))
+        LinEquation.resize(381, 347)
+        LinEquation.setStyleSheet(_fromUtf8("\n"
 "QToolTip\n"
 "{\n"
 "     border: 1px solid black;\n"
@@ -216,42 +219,47 @@ class Ui_Form(object):
 "{\n"
 "    border: 1px transparent black;\n"
 "}"))
-        self.edit1 = QtGui.QLineEdit(Form)
-        self.edit1.setGeometry(QtCore.QRect(180, 80, 51, 41))
-        self.edit1.setObjectName(_fromUtf8("edit1"))
-        self.edit2 = QtGui.QLineEdit(Form)
-        self.edit2.setGeometry(QtCore.QRect(240, 80, 61, 41))
-        self.edit2.setObjectName(_fromUtf8("edit2"))
-        self.edit3 = QtGui.QLineEdit(Form)
-        self.edit3.setGeometry(QtCore.QRect(310, 80, 51, 41))
-        self.edit3.setObjectName(_fromUtf8("edit3"))
-        self.label = QtGui.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(70, 40, 241, 31))
-        self.label.setObjectName(_fromUtf8("label"))
-        self.label1 = QtGui.QLabel(Form)
-        self.label1.setGeometry(QtCore.QRect(10, 80, 161, 31))
-        self.label1.setObjectName(_fromUtf8("label1"))
-        self.label3 = QtGui.QLabel(Form)
-        self.label3.setGeometry(QtCore.QRect(30, 170, 51, 31))
-        self.label3.setObjectName(_fromUtf8("label3"))
-        self.label4 = QtGui.QLabel(Form)
-        self.label4.setGeometry(QtCore.QRect(30, 220, 61, 31))
-        self.label4.setObjectName(_fromUtf8("label4"))
-        self.ansy = QtGui.QLineEdit(Form)
-        self.ansy.setGeometry(QtCore.QRect(90, 220, 271, 41))
-        self.ansy.setReadOnly(True)
-        self.ansy.setObjectName(_fromUtf8("ansy"))
-        self.ansx = QtGui.QLineEdit(Form)
+        self.a1 = QtGui.QLineEdit(LinEquation)
+        self.a1.setGeometry(QtCore.QRect(180, 90, 51, 41))
+        self.a1.setText(_fromUtf8(""))
+        self.a1.setObjectName(_fromUtf8("a1"))
+        self.ansx = QtGui.QLineEdit(LinEquation)
         self.ansx.setEnabled(True)
-        self.ansx.setGeometry(QtCore.QRect(90, 170, 271, 41))
+        self.ansx.setGeometry(QtCore.QRect(90, 240, 271, 41))
+        self.ansx.setText(_fromUtf8(""))
         self.ansx.setReadOnly(True)
         self.ansx.setObjectName(_fromUtf8("ansx"))
-        self.pushButton = QtGui.QPushButton(Form)
-        self.pushButton.setGeometry(QtCore.QRect(150, 130, 97, 27))
+        self.pushButton = QtGui.QPushButton(LinEquation)
+        self.pushButton.setGeometry(QtCore.QRect(160, 200, 97, 27))
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
         self.pushButton.clicked.connect(self.solve)
-        self.label_2 = QtGui.QLabel(Form)
-        self.label_2.setGeometry(QtCore.QRect(60, 0, 261, 31))
+        self.c1 = QtGui.QLineEdit(LinEquation)
+        self.c1.setGeometry(QtCore.QRect(310, 90, 51, 41))
+        self.c1.setText(_fromUtf8(""))
+        self.c1.setObjectName(_fromUtf8("c1"))
+        self.label1 = QtGui.QLabel(LinEquation)
+        self.label1.setGeometry(QtCore.QRect(10, 90, 161, 31))
+        self.label1.setObjectName(_fromUtf8("label1"))
+        self.b1 = QtGui.QLineEdit(LinEquation)
+        self.b1.setGeometry(QtCore.QRect(240, 90, 61, 41))
+        self.b1.setText(_fromUtf8(""))
+        self.b1.setObjectName(_fromUtf8("b1"))
+        self.label4 = QtGui.QLabel(LinEquation)
+        self.label4.setGeometry(QtCore.QRect(20, 290, 61, 31))
+        self.label4.setObjectName(_fromUtf8("label4"))
+        self.label3 = QtGui.QLabel(LinEquation)
+        self.label3.setGeometry(QtCore.QRect(20, 250, 51, 31))
+        self.label3.setObjectName(_fromUtf8("label3"))
+        self.label = QtGui.QLabel(LinEquation)
+        self.label.setGeometry(QtCore.QRect(60, 40, 271, 31))
+        self.label.setObjectName(_fromUtf8("label"))
+        self.ansy = QtGui.QLineEdit(LinEquation)
+        self.ansy.setGeometry(QtCore.QRect(90, 290, 271, 41))
+        self.ansy.setText(_fromUtf8(""))
+        self.ansy.setReadOnly(True)
+        self.ansy.setObjectName(_fromUtf8("ansy"))
+        self.label_2 = QtGui.QLabel(LinEquation)
+        self.label_2.setGeometry(QtCore.QRect(10, 0, 371, 31))
         font = QtGui.QFont()
         font.setFamily(_fromUtf8("Century Schoolbook L"))
         font.setPointSize(13)
@@ -259,16 +267,34 @@ class Ui_Form(object):
         font.setWeight(75)
         self.label_2.setFont(font)
         self.label_2.setObjectName(_fromUtf8("label_2"))
+        self.a2 = QtGui.QLineEdit(LinEquation)
+        self.a2.setGeometry(QtCore.QRect(180, 140, 51, 41))
+        self.a2.setText(_fromUtf8(""))
+        self.a2.setObjectName(_fromUtf8("a2"))
+        self.label1_2 = QtGui.QLabel(LinEquation)
+        self.label1_2.setGeometry(QtCore.QRect(10, 140, 161, 31))
+        self.label1_2.setObjectName(_fromUtf8("label1_2"))
+        self.b2 = QtGui.QLineEdit(LinEquation)
+        self.b2.setGeometry(QtCore.QRect(240, 140, 61, 41))
+        self.b2.setText(_fromUtf8(""))
+        self.b2.setObjectName(_fromUtf8("b2"))
+        self.c2 = QtGui.QLineEdit(LinEquation)
+        self.c2.setGeometry(QtCore.QRect(310, 140, 51, 41))
+        self.c2.setText(_fromUtf8(""))
+        self.c2.setObjectName(_fromUtf8("c2"))
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(LinEquation)
+        QtCore.QMetaObject.connectSlotsByName(LinEquation)
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(_translate("Form", "Form", None))
-        self.label.setText(_translate("Form", "Equation is of the form ax^2+bx+c", None))
-        self.label1.setText(_translate("Form", "Enter a , b and c \n"
+    def retranslateUi(self, LinEquation):
+        LinEquation.setWindowTitle(_translate("LinEquation", "Form", None))
+        self.pushButton.setText(_translate("LinEquation", "Calculate", None))
+        self.label1.setText(_translate("LinEquation", "Enter a1 , b1 and c1 \n"
 " respectively", None))
-        self.label3.setText(_translate("Form", "Root1=", None))
-        self.label4.setText(_translate("Form", "Root2=", None))
-        self.pushButton.setText(_translate("Form", "Calculate", None))
-        self.label_2.setText(_translate("Form", "Solving Quadratic equation", None))
+        self.label4.setText(_translate("LinEquation", "y=", None))
+        self.label3.setText(_translate("LinEquation", "x=", None))
+        self.label.setText(_translate("LinEquation", "Equations are of the form a1x+b1y=c1 & \n"
+" a2x+b2y=c2", None))
+        self.label_2.setText(_translate("LinEquation", "Solving Linear Equation in two Variable", None))
+        self.label1_2.setText(_translate("LinEquation", "Enter a2 , b2 and c2 \n"
+" respectively", None))

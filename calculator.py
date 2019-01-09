@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
-from equation import Ui_Form
+from menuu import Ui_Menu
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -25,7 +25,7 @@ except AttributeError:
 class Ui_Dialog(object):
     def openWindow(self):
         self.window = QtGui.QMainWindow()
-        self.ui = Ui_Form()
+        self.ui = Ui_Menu()
         self.ui.setupUi(self.window)
         self.window.show()
     def setupUi(self, Dialog):
