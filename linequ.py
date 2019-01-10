@@ -25,21 +25,29 @@ except AttributeError:
 
 class Ui_LinEquation(object):
     def solve(self):
-    	a11 = float(self.a1.text())
-    	b11 = float(self.b1.text())
-    	c11 = float(self.c1.text())
-    	a22 = float(self.a2.text())
-    	b22 = float(self.b2.text())
-    	c22 = float(self.c2.text())
-        a = np.array([[a11, b11],[a22,b22]])
-        b = np.array([c11, c22])
-        [x,y]=np.linalg.solve(a,b)
-        print(x)
-        print(y)
-        x=str(x)
-        y=str(y)
-        self.ansx.setText(x)
-        self.ansy.setText(y)
+        try:
+            a11 = float(self.a1.text())
+            b11 = float(self.b1.text())
+            c11 = float(self.c1.text())
+            a22 = float(self.a2.text())
+            b22 = float(self.b2.text())
+            c22 = float(self.c2.text())
+            a = np.array([[a11, b11],[a22,b22]])
+            b = np.array([c11, c22])
+            [x,y]=np.linalg.solve(a,b)
+            print(x)
+            print(y)
+            x=str(x)
+            y=str(y)
+            self.ansx.setText(x)
+            self.ansy.setText(y)
+        except np.linalg.LinAlgError:
+            print("Math Error :Unique solution not possible , enter valid input")
+            self.ansx.setText("Math Error : Unique solution not possible")
+            self.ansy.setText("Math Error : Unique solution not possible")
+
+
+
     def setupUi(self, LinEquation):
         LinEquation.setObjectName(_fromUtf8("LinEquation"))
         LinEquation.resize(381, 347)
