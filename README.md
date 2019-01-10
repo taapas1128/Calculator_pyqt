@@ -94,6 +94,9 @@ This is a basic PyQt based scientific calculator.
 
   ![calculator](cal.png)
   ![calculator](cmplx_calc.png)
+  ![calculator](eq_menu.png)
+  ![calculator](lin_equ.png)
+  ![calculator](quad_equ.png)
   ![calculator](graph_1.png)
   ![calculator](graph_3.png)
   ![calculator](graph_2.png)
